@@ -1,6 +1,10 @@
 package bg.softuni.booksrestserver.models.entities;
 
 import jakarta.persistence.Entity;
+<<<<<<< HEAD
+=======
+import jakarta.persistence.ManyToOne;
+>>>>>>> origin/main
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -19,9 +23,14 @@ public class AuthorEntity extends BaseEntity{
         return name;
     }
 
+<<<<<<< HEAD
     public AuthorEntity setName(String name) {
         this.name = name;
         return this;
+=======
+    public void setName(String name) {
+        this.name = name;
+>>>>>>> origin/main
     }
 
     public List<BookEntity> getBooks() {
