@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/books_rest_server?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:12345}
+
+  jpa:
+    # Choose either MySQL 8 or MySQL 5 below
+    # For MySQL 8
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    #For MySQL 5
+    #database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+
+mvc:
+  hiddenmethod:
+    filter:
+      enabled: true
+        #Cloudinary Properties
+        #cloudinary:
+        #api-key:
+        #api-secret:
+        #cloud-name:
+
+        #default.admin.pass: ${DEFAULT_ADMIN_PASS:topsecret}
