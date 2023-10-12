@@ -44,11 +44,8 @@ public class BookEntity extends BaseEntity{
         return "BookEntity{" +
                 "titile='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-<<<<<<< HEAD
                 ", author=" + (author != null ? author.getName() : null) +
-=======
                 ", author=" + author +
->>>>>>> origin/main
                 '}';
     }
 }
