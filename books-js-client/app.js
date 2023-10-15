@@ -1,63 +1,60 @@
+
+
 let loadBooksBtn = document.getElementById("loadBooks");
+let tBody = document.getElementById('books-container');
 
-loadBooksBtn.addEventListener('click', reloadBooks)
-
-// TODO: create new book
-
-function reloadBooks() {
-
-  let booksCntr = document.getElementById('books-container')
-  booksCntr.innerHTML = ''
-
-  fetch("http://localhost:8080/api/books").
-    then(response => response.json()).
-    then(json => json.forEach(book => {
-      // create row
-      let row = document.createElement('tr')
-
-      let titleCol = document.createElement('td')
-      let authorCol = document.createElement('td')
-      let isbnCol = document.createElement('td')
-      let actionCol = document.createElement('td')
-
-      //book
-      titleCol.textContent = book.title
-      // atuhor
-      authorCol.textContent = book.author.name
-      isbnCol.textContent = book.isbn
-      //actions
-      //delete btn
-      let deleteBtn = document.createElement('button')
-      deleteBtn.innerText = 'DELETE'
-      deleteBtn.dataset.id = book.id
-      deleteBtn.addEventListener('click', deleteBtnClicked)
-
-      actionCol.appendChild(deleteBtn)
-
-      row.appendChild(titleCol)
-      row.appendChild(authorCol)
-      row.appendChild(isbnCol)
-      row.appendChild(actionCol)
-
-      booksCntr.appendChild(row)
-  }))
-
-}
-
-function deleteBtnClicked(event) {
-  let bookId = event.target.dataset.id;
-
-  deleteBook(bookId)
-}
-
-function deleteBook(bookId) {
-
-  var requestOptions = {
-    method: 'DELETE'
+loadBooksBtn.addEventListener("click", reloadBooks)
+ async function reloadBooks() {
+  let requestOptions = {
+    method: 'GET'
   }
 
-  fetch(`http://localhost:8080/api/books/${bookId}`, requestOptions).
-    then(_ => reloadBooks()).
-    catch(error => console.log('error', error))
+  fetch("http://localhost:8080/api/books", requestOptions)
+      .then(response => response.json())
+      .then(json => json.forEach(book => {
+          let tr = createElement('tr', tBody);
+          let title = book.title;
+          let author = book.author.name;
+          let isbn = book.isbn;
 
+          createElement('td',tr,title);
+          createElement('td',tr,author);
+          createElement('td',tr,isbn);
+      }));
+}
+function createElement(type, parentNode, content, classes, id, attributes, useInnerHtml) {
+    const htmlElement = document.createElement(type);
+
+    if (content && useInnerHtml) {
+        htmlElement.innerHTML = content;
+    } else {
+        if (content && type !== 'input') {
+            htmlElement.textContent = content;
+        }
+
+        if (content && type === 'input') {
+            htmlElement.value = content;
+        }
+    }
+
+    if (classes && classes.length > 0) {
+        htmlElement.classList.add(...classes);
+    }
+
+    if (id) {
+        htmlElement.id = id;
+    }
+
+    // { src: 'link', href: 'http' }
+    if (attributes) {
+        for (const key in attributes) {
+            htmlElement.setAttribute(key, attributes[key])
+        }
+    }
+
+    if (parentNode) {
+        parentNode.appendChild(htmlElement);
+    }
+
+    return htmlElement;
 }
