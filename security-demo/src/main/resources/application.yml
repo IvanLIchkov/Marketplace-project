@@ -6,7 +6,7 @@ spring:
     password: 12345
   sql:
     init:
-      mode: never
+      mode: always
   jpa:
     # Choose either MySQL 8 or MySQL 5 below
     # For MySQL 8
@@ -14,14 +14,14 @@ spring:
     #For MySQL 5
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     open-in-view: false
     properties:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
   mvc:
-    hidden-method:
+    hiddenmethod:
       filter:
         enabled: true
 
