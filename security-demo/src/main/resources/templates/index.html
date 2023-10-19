@@ -14,7 +14,7 @@
 <div class="container">
   <h2 class="text-center text-white">Welcome to home page</h2>
 
-  <th:block>
+  <th:block sec:authorize="isAuthenticated()">
       <h3 class="text-center text-white" th:text="${fullName}"></h3>
       <h3 class="text-center text-white" th:text="${country}"></h3>
   </th:block>

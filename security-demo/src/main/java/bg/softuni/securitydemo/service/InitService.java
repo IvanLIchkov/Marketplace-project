@@ -62,6 +62,7 @@ public class InitService {
                 .setEmail("admin@example.com")
                 .setFirstName("Admin")
                 .setLastName("Adminov")
+                .setCountry("Bulgaria")
                 .setPassword(passwordEncoder.encode(defaultPassword))
                 .setRoles(userRoleRepository.findAll());
 
@@ -74,6 +75,7 @@ public class InitService {
                 .setEmail("moderator@example.com")
                 .setFirstName("Moderator")
                 .setLastName("Moderatorov")
+                .setCountry("Greece")
                 .setPassword(passwordEncoder.encode(defaultPassword))
                 .setRoles(List.of(userRoleRepository.findUserRoleEntityByRole(UserRoleEnum.MODERATOR).orElseThrow()));
 
@@ -85,6 +87,7 @@ public class InitService {
                 .setEmail("user@example.com")
                 .setFirstName("User")
                 .setLastName("Userov")
+                .setCountry("Tanzania")
                 .setPassword(passwordEncoder.encode(defaultPassword));
 
         userRepository.save(normalUser);

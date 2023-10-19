@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolderStrategy;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.context.SecurityContextRepository;
@@ -42,7 +43,7 @@ public class UserService {
 
        userRepository.save(user);
 
-       var userDetails = userDetailsService.loadUserByUsername(userRegistrationDto.getEmail());
+       UserDetails userDetails = userDetailsService.loadUserByUsername(userRegistrationDto.getEmail());
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(
                 userDetails, userDetails.getPassword(), userDetails.getAuthorities()
