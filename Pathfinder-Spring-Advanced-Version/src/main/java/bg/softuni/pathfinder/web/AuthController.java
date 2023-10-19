@@ -5,6 +5,7 @@ import bg.softuni.pathfinder.model.dto.UserRegistrationDTO;
 import bg.softuni.pathfinder.model.views.UserProfileView;
 import bg.softuni.pathfinder.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -61,21 +62,28 @@ public class AuthController {
         return "login";
     }
 
-    @GetMapping("/profile")
-    public String profile(Principal principal, Model model) {
-        String username = principal.getName();
-        User user = authService.getUser(username);
+    @PostMapping("/users/login-error")
+    public String login(@ModelAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY)String username,
+                        RedirectAttributes redirectAttributes){
 
-        UserProfileView userProfileView = new UserProfileView(
-                username,
-                user.getEmail(),
+        redirectAttributes.addFlashAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY, username);
+        redirectAttributes.addFlashAttribute("bad_credentials", true);
+
+        return "redirect:/login";
+    }
+
+  @GetMapping("/profile")
+    private String profile(Principal principal,Model model){
+        User user = authService.getUser(principal.getName());
+        UserProfileView profileView = new UserProfileView(
                 user.getFullName(),
+                user.getEmail(),
+                user.getUsername(),
                 user.getAge(),
-                user.getLevel() != null ? user.getLevel().name() : "BEGINNER"
+                user.getLevel() == null ? "NONE" : user.getLevel().name()
         );
 
-        model.addAttribute("user", userProfileView);
-
+        model.addAttribute("user", profileView);
         return "profile";
-    }
+  }
 }
