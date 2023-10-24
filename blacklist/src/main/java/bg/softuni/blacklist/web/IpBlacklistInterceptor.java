@@ -28,8 +28,8 @@ public class IpBlacklistInterceptor implements HandlerInterceptor {
 
         if(blackListService.isBlacklisted(ip)){
             View blocked = thymeleafViewResolver.resolveViewName("blocked", Locale.getDefault());
-            if(blocked != null) {
-                blocked.render(Map.of(), request, response);
+            if(blocked != null){
+            blocked.render(Map.of(), request, response);
             }
             return false;
 
