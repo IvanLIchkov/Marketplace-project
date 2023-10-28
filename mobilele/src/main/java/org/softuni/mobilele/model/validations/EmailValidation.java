@@ -1,7 +1,8 @@
-package org.softuni.mobilele.model.validation;
+package org.softuni.mobilele.model.validations;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -9,13 +10,13 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = UniqueUserEmailValidator.class)
-public @interface UniqueUserEmail {
+@Constraint(validatedBy = EmailValidator.class)
+public @interface EmailValidation {
 
-  String message() default "The user email should be unique";
 
-  Class<?>[] groups() default {};
+    String message() default "Email has been already used!";
 
-  Class<? extends Payload>[] payload() default {};
+    Class<?>[] groups() default{};
 
+    Class<? extends Payload>[] payload() default {};
 }

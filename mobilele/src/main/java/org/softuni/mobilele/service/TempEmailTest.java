@@ -14,6 +14,6 @@ public class TempEmailTest implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        emailService.sendRegistrationEmail("scopi@example.com", "Scopi");
+//        emailService.sendRegistrationEmail("scopi@example.com", "Scopi");
     }
 }

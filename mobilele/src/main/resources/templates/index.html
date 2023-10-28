@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <h5 class="text-center text-white mt-5">Welcome to MobiLeLeLe,
         <th:block></th:block>
-        <th:block sec:authorize="isAnonymous()">Anonymous</th:block>
+        <th:block sec:authorize="isAnonymous()" th:text="${username}">Anonymous</th:block>
     </h5>
 </div>
 

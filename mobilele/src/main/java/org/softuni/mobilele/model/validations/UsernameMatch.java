@@ -1,7 +1,8 @@
-package org.softuni.mobilele.model.validation;
+package org.softuni.mobilele.model.validations;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -9,14 +10,12 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = YearNotInTheFutureValidator.class)
-public @interface YearNotInTheFuture {
+@Constraint(validatedBy = UsernameMatchValidator.class)
+public @interface UsernameMatch {
 
-  String message() default "must not be in the future";
+    String message() default "Username has been already used!";
 
-  Class<?>[] groups() default {};
+    Class<?>[] groups() default{};
 
-  Class<? extends Payload>[] payload() default {};
-
-
+    Class<? extends Payload>[] payload() default {};
 }
