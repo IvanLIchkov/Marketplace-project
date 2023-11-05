@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar  navbar-dark bg-dark ">
+    <div class="container px-5">
+        <div class="nav nav-pills flex-column flex-sm-row align-items-center">
+            <a class="navbar-brand" th:href="@{/}">Best marketplace</a>
+            <div class="text-white">Welcome, <th:block sec:authentication="name"></th:block>!</div>
+        </div>
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
+        <div class="nav justify-content-end" id="navbarSupportedContent">
+            <ul class=" d-flex justify-content-between">
+                <li class="nav-item"><a class="text-white nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li sec:authorize="isAnonymous()" class="nav-item"><a class="text-white nav-link" th:href="@{/users/login}">Login</a></li>
+                <li sec:authorize="isAnonymous()" class="nav-item"><a class="text-white nav-link" th:href="@{/users/register}">Register</a></li>
+                <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="text-white nav-link" th:href="@{/admin}">Admin page</a></li>
+                <li class="nav-item"><a class="text-white nav-link" href="#!">Services</a></li>
+                <li class="nav-item">
+                    <div class="form-inline my-2 my-lg-0 px-3">
+                        <form
+                                th:method="post"
+                                sec:authorize="isAuthenticated()"
+                                th:action="@{/users/logout}">
+                            <input class="text-white btn btn-link nav-link" type="submit" value="Logout">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
