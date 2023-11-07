@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -37,4 +38,16 @@ public class CategoryServiceImpl implements CategoryService {
             this.categoryRepository.saveAll(categoryInitList);
         }
     }
+
+    @Override
+    public List<CategoryEntity> getAllCategories() {
+        return this.categoryRepository.findAll();
+    }
+
+    @Override
+    public CategoryEntity getCategoryById(Long categoryId) {
+        return this.categoryRepository.findById(categoryId).orElseThrow(() -> new NoSuchElementException("Category is not found!"));
+    }
+
+
 }

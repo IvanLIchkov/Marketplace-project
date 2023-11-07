@@ -49,8 +49,6 @@ public class RegisterController {
 
     @GetMapping("/register")
     public String register(){
-//        model.addAttribute("userRegisterDto", new UserRegisterDto());
-//        model.addAttribute("townList", townService.getAllTowns());
         return "auth-register";
     }
 
@@ -67,7 +65,7 @@ public class RegisterController {
             redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
             return "redirect:/users/register";
         }
-
+            userRegisterDto.setIpAddress(getIpAddressFromRequest(request));
         userService.registerUser(userRegisterDto, successFullAuth -> {
             SecurityContextHolderStrategy strategy = SecurityContextHolder.getContextHolderStrategy();
 
@@ -80,5 +78,20 @@ public class RegisterController {
         });
 
         return "redirect:/";
+    }
+    private String getIpAddressFromRequest(HttpServletRequest request){
+        String ipAddress= null;
+
+        String xffHeader = request.getHeader("X-Forwarded-For");
+        if (xffHeader != null && !xffHeader.startsWith("unknow")){
+            int clientIdx = xffHeader.indexOf(",");
+            if(clientIdx >0){
+                ipAddress = xffHeader.substring(0, clientIdx - 1);
+            }
+        }
+        if(ipAddress == null){
+            ipAddress = request.getRemoteAddr();
+        }
+        return ipAddress;
     }
 }

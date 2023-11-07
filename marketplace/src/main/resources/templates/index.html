@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/head::head">
 
 </head>
@@ -19,36 +19,26 @@
         </div>
     </div>
     <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+    <div sec:authorize="isAnonymous()" class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">
+            <a class="text-dark h3" rel="stylesheet" th:href="@{/users/login}">Login</a> or
+            <a class="text-dark h3" rel="stylesheet" th:href="@{/users/register}">Register</a>
+            to see all categories and items!
+        </p></div>
     </div>
     <!-- Content Row-->
-    <div class="row gx-4 gx-lg-5">
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card One</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+<!--    style=" background-image: url('/images/hobby.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"-->
+    <div sec:authorize="isAuthenticated()" class="row gx-4 gx-lg-5">
+        <div  th:each="c : ${categories}" class="col-md-4 mb-5" >
+            <div   class=" card h-100">
+                <div class="card-body bg-opacity-0"  >
+                    <h2 class="text- card-title bg-white" style="width: fit-content" th:text="${c.type.name()}">Card One</h2>
+                    <div class="card-img-top-wrapper">
+                        <img class="card-img-top" th:src="'/images/'+${c.type.name().toLowerCase()}+'.jpg'" alt="image">
+                    </div>
+                    <p class="card-text bg-white" style="width: fit-content" th:text="${c.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Two</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Three</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="|/items/all/${c.id}|">Show products from <th:block th:text="${ c.type.name().toLowerCase()}"></th:block> category!</a></div>
             </div>
         </div>
     </div>

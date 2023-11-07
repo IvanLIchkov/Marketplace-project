@@ -21,11 +21,11 @@ public class UserRegisterDto {
     private String email;
 
     @NotEmpty(message = "First name must not be empty!")
-    @Size(min = 5, max = 20, message = "Length must be between 5 and 20 symbols!")
+    @Size(min = 2, max = 20, message = "Length must be between 2 and 20 symbols!")
     private String firstName;
 
     @NotEmpty(message = "Last name must not be empty!")
-    @Size(min = 5, max = 20, message = "Length must be between 5 and 20 symbols!")
+    @Size(min = 2, max = 20, message = "Length must be between 2 and 20 symbols!")
     private String lastName;
 
 
@@ -39,6 +39,8 @@ public class UserRegisterDto {
 
 
     private String townName;
+
+    private String ipAddress;
 
     public String getUsername() {
         return username;
@@ -100,6 +102,15 @@ public class UserRegisterDto {
 
     public UserRegisterDto setTownName(String townName) {
         this.townName = townName;
+        return this;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public UserRegisterDto setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
         return this;
     }
 }

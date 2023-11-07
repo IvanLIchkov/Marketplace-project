@@ -1,5 +1,6 @@
 package bg.softuni.marketplace.web;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +26,6 @@ public class LoginController {
 
         return "redirect:/users/login";
     }
+
 
 }

@@ -13,4 +13,6 @@ public interface UserService {
     void init();
 
     void registerUser(UserRegisterDto userRegisterDto, Consumer<Authentication> successfulLoginProcessor);
+
+    UserEntity getUser();
 }

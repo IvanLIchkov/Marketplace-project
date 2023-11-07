@@ -5,11 +5,13 @@ import bg.softuni.marketplace.model.dto.UserRegisterDto;
 import bg.softuni.marketplace.repository.UserRepository;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.function.Consumer;
 
 @Service
@@ -45,16 +47,24 @@ public class UserServiceImpl implements UserService {
                 .setFirstName(userRegisterDto.getFirstName())
                 .setLastName(userRegisterDto.getLastName())
                 .setEmail(userRegisterDto.getEmail())
+                .setRoleEntities(new HashSet<>())
                 .setPassword(passwordEncoder.encode(userRegisterDto.getPassword()))
-                .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()));
+                .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()))
+                .setIpAddress(userRegisterDto.getIpAddress());
 
         userRepository.save(user);
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(userRegisterDto.getUsername());
 
-        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                userDetails, userDetails.getPassword(), userDetails.getAuthorities());
 
         successfulLoginProcessor.accept(authentication);
+    }
+
+    @Override
+    public UserEntity getUser() {
+        return this.userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).get();
     }
 
 

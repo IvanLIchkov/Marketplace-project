@@ -7,6 +7,6 @@ public class BlackListService {
 
     public boolean isBlacklisted(String ipAddress){
         // TODO: create repository where admin may manage blacklisted IP-s
-        return  false;
+        return  true;
     }
 }

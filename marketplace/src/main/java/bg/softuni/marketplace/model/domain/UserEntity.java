@@ -14,10 +14,10 @@ public class UserEntity extends BaseEntity{
     @Column(nullable = false)
     private String email;
 
-    @Column()
+    @Column
     private String firstName;
 
-    @Column()
+    @Column(nullable = false)
     private String lastName;
 
     @Column(nullable = false)
@@ -35,6 +35,9 @@ public class UserEntity extends BaseEntity{
 //    @JoinColumn(name = "bought_items_id")
     @OneToMany(mappedBy = "buyer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ItemEntity> boughtItemEntities;
+
+    @Column
+    private String ipAddress;
 
     public String getUsername() {
         return username;
@@ -114,6 +117,15 @@ public class UserEntity extends BaseEntity{
 
     public UserEntity setBoughtItemEntities(Set<ItemEntity> boughtItemEntities) {
         this.boughtItemEntities = boughtItemEntities;
+        return this;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public UserEntity setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
         return this;
     }
 }

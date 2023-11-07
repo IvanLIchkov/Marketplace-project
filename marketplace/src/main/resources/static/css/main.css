@@ -56,3 +56,12 @@ form.main-form {
 .logged-user {
   color: white;
 }
+
+.container{
+  padding-top: 5px;
+}
+
+.nav-content{
+  margin-bottom: 0px;
+}
+

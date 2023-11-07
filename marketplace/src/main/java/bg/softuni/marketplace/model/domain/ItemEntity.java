@@ -12,8 +12,8 @@ public class ItemEntity extends BaseEntity{
     @Column(nullable = false)
     private String name;
 
-    @Column
-    private String picture;
+    @Column(length = 64)
+    private String pictureUrl;
 
     @Column(nullable = false)
     private BigDecimal price;
@@ -42,12 +42,12 @@ public class ItemEntity extends BaseEntity{
         return this;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public ItemEntity setPicture(String picture) {
-        this.picture = picture;
+    public ItemEntity setPictureUrl(String picture) {
+        this.pictureUrl = picture;
         return this;
     }
 
@@ -84,6 +84,24 @@ public class ItemEntity extends BaseEntity{
 
     public ItemEntity setCategory(CategoryEntity category) {
         this.category = category;
+        return this;
+    }
+
+    public UserEntity getSaller() {
+        return saller;
+    }
+
+    public ItemEntity setSaller(UserEntity saller) {
+        this.saller = saller;
+        return this;
+    }
+
+    public UserEntity getBuyer() {
+        return buyer;
+    }
+
+    public ItemEntity setBuyer(UserEntity buyer) {
+        this.buyer = buyer;
         return this;
     }
 }
