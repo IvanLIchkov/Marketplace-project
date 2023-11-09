@@ -20,4 +20,6 @@ public interface UserService {
     UserEntity getUser();
 
     List<UserViewForAdminPage> allNonAdminUsers();
+
+    UserEntity findUserByEmail(String email);
 }

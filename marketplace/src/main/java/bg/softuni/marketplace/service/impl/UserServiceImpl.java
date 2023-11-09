@@ -8,6 +8,7 @@ import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.RoleService;
 import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
+import org.hibernate.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.Authentication;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -87,6 +89,11 @@ public class UserServiceImpl implements UserService {
         List<UserEntity> users = this.userRepository.findAll();
         List<UserViewForAdminPage> collect = users.stream().map(this::mapEntityToAdminView).collect(Collectors.toList());
         return collect;
+    }
+
+    @Override
+    public UserEntity findUserByEmail(String email) {
+        return this.userRepository.findByEmail(email).orElseThrow(NoSuchElementException::new);
     }
 
 

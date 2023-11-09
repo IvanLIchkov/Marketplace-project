@@ -26,7 +26,7 @@ public class EmailServiceImpl implements EmailService {
 
 
     @Override
-    public void sendRegistrationEmail(String userEmail, String username)  {
+    public void sendRegistrationEmail(String userEmail, String username, String activationLink)  {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
@@ -36,7 +36,7 @@ public class EmailServiceImpl implements EmailService {
             mimeMessageHelper.setFrom(siteMail);
             mimeMessageHelper.setReplyTo(siteMail);
             mimeMessageHelper.setSubject("Welcome to marketplace!");
-            mimeMessageHelper.setText(generateRegistrationEmailBody(username), true);
+            mimeMessageHelper.setText(generateRegistrationEmailBody(username, activationLink), true);
 
             javaMailSender.send(mimeMessageHelper.getMimeMessage());
         } catch (MessagingException e) {
@@ -44,9 +44,10 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 
-    private String generateRegistrationEmailBody(String username){
+    private String generateRegistrationEmailBody(String username, String activationLink){
         Context context = new Context();
         context.setVariable("username", username);
+        context.setVariable("activation_link", activationLink);
         return templateEngine.process("email/registration-email.html", context);
     }
 }
