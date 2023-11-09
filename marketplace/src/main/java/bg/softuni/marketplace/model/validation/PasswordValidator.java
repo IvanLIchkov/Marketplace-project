@@ -36,7 +36,7 @@ public class PasswordValidator implements ConstraintValidator<PasswordMatch, Obj
 
         if(!valid){
             context.buildConstraintViolationWithTemplate(message)
-                    .addPropertyNode(second)
+                    .addPropertyNode(first)
                     .addConstraintViolation()
                     .disableDefaultConstraintViolation();
         }

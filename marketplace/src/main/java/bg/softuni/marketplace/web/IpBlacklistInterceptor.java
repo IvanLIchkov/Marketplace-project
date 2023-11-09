@@ -1,6 +1,6 @@
 package bg.softuni.marketplace.web;
 
-import bg.softuni.marketplace.service.BlackListService;
+import bg.softuni.marketplace.service.impl.BlackListService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;

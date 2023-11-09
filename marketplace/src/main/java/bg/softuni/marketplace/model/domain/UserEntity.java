@@ -39,6 +39,9 @@ public class UserEntity extends BaseEntity{
     @Column
     private String ipAddress;
 
+    @Column
+    private boolean confirmedEmail;
+
     public String getUsername() {
         return username;
     }
@@ -126,6 +129,15 @@ public class UserEntity extends BaseEntity{
 
     public UserEntity setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
+        return this;
+    }
+
+    public boolean isConfirmedEmail() {
+        return confirmedEmail;
+    }
+
+    public UserEntity setConfirmedEmail(boolean confirmedEmail) {
+        this.confirmedEmail = confirmedEmail;
         return this;
     }
 }

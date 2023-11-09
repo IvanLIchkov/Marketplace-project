@@ -27,8 +27,9 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.orm.jdbc.bind: TRACE
 
-#mail:
-#  host: localhost
-#  port: 1025
-#  username: "admin@example.com"
-#  password: ""
+mail:
+  marketplace: "marketplace@mail.com"
+  host: localhost
+  port: 1025
+  username: ${MAIL_USER:admin@example.com}
+  password: ${MAIL_PASSWORD:softuni}

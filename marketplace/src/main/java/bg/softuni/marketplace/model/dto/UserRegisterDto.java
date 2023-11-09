@@ -12,11 +12,11 @@ public class UserRegisterDto {
 
     @NotEmpty(message = "Username must not be empty!")
     @Size(min = 3, max = 20, message = "Length must be between 3 and 20 symbols!")
-    @UsernameMatch
+    @UsernameMatch(message = "User with this username already exists!")
     private String username;
 
-    @Email
-    @EmailValidation
+    @Email(message = "Please insert valid email!")
+    @EmailValidation(message = "User with this email already exists!")
     @NotEmpty(message = "Email is required!")
     private String email;
 

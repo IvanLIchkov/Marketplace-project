@@ -14,6 +14,7 @@ public class UsernameMatchValidator implements ConstraintValidator<UsernameMatch
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return this.userRepository.findByUsername(value).isEmpty();
+        boolean empty = this.userRepository.findByUsername(value).isEmpty();
+        return empty;
     }
 }

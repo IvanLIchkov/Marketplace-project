@@ -31,7 +31,7 @@ public class IndexController {
         model.addAttribute("isLogged", appUserDetails != null);
         if(appUserDetails != null){
             model.addAttribute("username", appUserDetails.getUsername());
-//            model.addAttribute("categories", categoryService.getAllCategories());
+            model.addAttribute("categories", categoryService.getAllCategories());
         }
         return "index";
     }

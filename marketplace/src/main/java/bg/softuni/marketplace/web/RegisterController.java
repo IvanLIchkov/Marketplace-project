@@ -2,17 +2,18 @@ package bg.softuni.marketplace.web;
 
 import bg.softuni.marketplace.model.domain.TownEntity;
 import bg.softuni.marketplace.model.dto.UserRegisterDto;
+import bg.softuni.marketplace.model.events.UserRegisteredEvent;
 import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,10 +32,13 @@ public class RegisterController {
 
     private final TownService townService;
 
-    public RegisterController(UserService userService, SecurityContextRepository securityContextRepository, TownService townService) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public RegisterController(UserService userService, SecurityContextRepository securityContextRepository, TownService townService, ApplicationEventPublisher applicationEventPublisher) {
         this.userService = userService;
         this.securityContextRepository = securityContextRepository;
         this.townService = townService;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     @ModelAttribute("userRegisterDto")
