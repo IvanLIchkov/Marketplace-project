@@ -36,3 +36,7 @@ body{
     max-width: 150px;
     border-radius: 20px;
 }
+.role_manage{
+    display: flex;
+    flex-direction: row-reverse;
+}

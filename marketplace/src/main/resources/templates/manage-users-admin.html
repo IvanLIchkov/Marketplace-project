@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -38,7 +39,7 @@
                         <tr>
                             <td class="pl-4" th:text="${u.id}">1</td>
                             <td>
-                                <h5 class="font-medium mb-0" th:text="${u.fullName}">Full Name</h5>
+                                <h5 class="font-medium mb-0" th:text="${u.firstName}+ ' ' +${u.lastName}">Full Name</h5>
                             </td>
                             <td>
                                 <span class="text-muted" th:text="${u.username}">Username</span><br>
@@ -51,13 +52,13 @@
                                 <span class="text-muted" th:text="${u.town}">Town</span><br>
                                 <span class="text-muted">10: 55 AM</span>
                             </td>
-                            <td>
-                                <span class="text-muted" >User</span><br>
+                            <td class="role_manage" th:each="r : ${u.getRoleEntities()}">
+                                <span class="text-muted" th:text="${r.name}">User</span><br>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-user-xmark"></i></button>
-                                <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-person-arrow-up-from-line"></i> </button>
-                                <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-eye"></i> </button>
+                                <a  th:href="|/admin/ban/${u.id}|" th:if="${u.getRoleEntities().size() == 1}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-user-xmark"></i></a>
+                                <a th:href="|/admin/promote/${u.id}|" th:if="${u.getRoleEntities().size() == 1}"  class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-person-arrow-up-from-line"></i> </a>
+                                <a  th:href="|/admin/view/details/${u.id}|" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-eye"></i> </a>
                             </td>
                         </tr>
                         </tbody>

@@ -1,6 +1,7 @@
 package bg.softuni.marketplace.web;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ public class LoginController {
         return "auth-login";
     }
 
-    @PostMapping("/login-error")
+    @GetMapping("/login-error")
     public String onFailedLogin(@ModelAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY) String username,
                                 RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY, username);
@@ -27,5 +28,13 @@ public class LoginController {
         return "redirect:/users/login";
     }
 
+    @GetMapping("/login-unactivated")
+    public String onUnactivated(@ModelAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY) String username,
+                                RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY, username);
+        redirectAttributes.addFlashAttribute("unactivated", true);
+
+        return "activate-before-login";
+    }
 
 }

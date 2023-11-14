@@ -9,7 +9,9 @@ public class UserViewForAdminPage {
 
     private Long id;
 
-    private String fullName;
+    private String firstName;
+
+    private String lastName;
 
     private String username;
 
@@ -29,12 +31,21 @@ public class UserViewForAdminPage {
         return this;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public UserViewForAdminPage setFullName(String fullName) {
-        this.fullName = fullName;
+    public UserViewForAdminPage setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public UserViewForAdminPage setLastName(String lastName) {
+        this.lastName = lastName;
         return this;
     }
 
@@ -66,5 +77,12 @@ public class UserViewForAdminPage {
     }
 
 
+    public Set<RoleEntity> getRoleEntities() {
+        return roleEntities;
+    }
 
+    public UserViewForAdminPage setRoleEntities(Set<RoleEntity> roleEntities) {
+        this.roleEntities = roleEntities;
+        return this;
+    }
 }

@@ -1,6 +1,6 @@
 package bg.softuni.marketplace.config;
 
-import bg.softuni.marketplace.web.IpBlacklistInterceptor;
+import bg.softuni.marketplace.web.interceptors.IpBlacklistInterceptor;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

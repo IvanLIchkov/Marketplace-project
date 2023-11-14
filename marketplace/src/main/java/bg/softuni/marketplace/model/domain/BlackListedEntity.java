@@ -1,16 +1,14 @@
 package bg.softuni.marketplace.model.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "banned_users")
 public class BlackListedEntity extends BaseEntity{
 
-    @Column(nullable = false)
-    private String userId;
+    @ManyToOne
+    private UserEntity user;
 
     @Column(nullable = false)
     private String userName;
@@ -18,12 +16,12 @@ public class BlackListedEntity extends BaseEntity{
     @Column(nullable = false)
     private String ipAddress;
 
-    public String getUserId() {
-        return userId;
+    public UserEntity getUser() {
+        return user;
     }
 
-    public BlackListedEntity setUserId(String userId) {
-        this.userId = userId;
+    public BlackListedEntity setUser(UserEntity user) {
+        this.user = user;
         return this;
     }
 

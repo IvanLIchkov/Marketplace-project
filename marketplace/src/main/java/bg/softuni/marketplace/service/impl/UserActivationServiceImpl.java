@@ -1,8 +1,10 @@
 package bg.softuni.marketplace.service.impl;
 
 import bg.softuni.marketplace.model.domain.UserActivationLinkEntity;
+import bg.softuni.marketplace.model.domain.UserEntity;
 import bg.softuni.marketplace.model.events.UserRegisteredEvent;
 import bg.softuni.marketplace.repository.UserActivationLinkRepository;
+import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.EmailService;
 import bg.softuni.marketplace.service.UserActivationService;
 import bg.softuni.marketplace.service.UserService;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.Instant;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 @Service
@@ -23,11 +26,13 @@ public class UserActivationServiceImpl implements UserActivationService {
     private final EmailService emailService;
     private final UserService userService;
     private final UserActivationLinkRepository userActivationLinkRepository;
+    private final UserRepository userRepository;
 
-    public UserActivationServiceImpl(EmailService emailService, UserService userService, UserActivationLinkRepository userActivationLinkRepository) {
+    public UserActivationServiceImpl(EmailService emailService, UserService userService, UserActivationLinkRepository userActivationLinkRepository, UserRepository userRepository) {
         this.emailService = emailService;
         this.userService = userService;
         this.userActivationLinkRepository = userActivationLinkRepository;
+        this.userRepository = userRepository;
     }
 
     @EventListener(UserRegisteredEvent.class)
@@ -35,6 +40,16 @@ public class UserActivationServiceImpl implements UserActivationService {
     public void userRegistered(UserRegisteredEvent event) {
         String activationCode = createActivationCode(event.getUserEmail());
         emailService.sendRegistrationEmail(event.getUserEmail(), event.getUsername(), activationCode);
+    }
+
+    @Override
+    public void activateUser(String activationCode){
+        UserActivationLinkEntity userActivationLinkEntity =
+                this.userActivationLinkRepository.findByActivationLink(activationCode)
+                        .orElseThrow(() -> new NoSuchElementException("Activation code not found may be expired!"));
+
+        this.userRepository.save(userActivationLinkEntity.getUser().setConfirmedEmail(true));
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package bg.softuni.marketplace.web;
+package bg.softuni.marketplace.web.interceptors;
 
 import bg.softuni.marketplace.service.impl.BlackListService;
 import jakarta.servlet.http.HttpServletRequest;

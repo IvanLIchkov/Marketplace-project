@@ -14,11 +14,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -61,7 +60,8 @@ public class RegisterController {
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes,
                                   HttpServletRequest request,
-                                  HttpServletResponse response){
+                                  HttpServletResponse response,
+                                  Model model){
 
 
         if(bindingResult.hasErrors()){
@@ -80,9 +80,11 @@ public class RegisterController {
 
             securityContextRepository.saveContext(context, request, response);
         });
-
-        return "redirect:/";
+       model.addAttribute("userEmail", userRegisterDto.getEmail());
+        return "signup";
     }
+
+
     private String getIpAddressFromRequest(HttpServletRequest request){
         String ipAddress= null;
 

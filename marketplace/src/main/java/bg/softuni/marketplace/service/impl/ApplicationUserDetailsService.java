@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.List;
 
-public class ApplicationUserDetailsService implements UserDetailsService {
+public class ApplicationUserDetailsService implements UserDetailsService{
 
     private final UserRepository userRepository;
 
@@ -26,11 +26,16 @@ public class ApplicationUserDetailsService implements UserDetailsService {
                 .map(this::map)
                 .orElseThrow(() -> new UsernameNotFoundException("User with name "+username+" not found!"));
     }
+
+
     private UserDetails map(UserEntity userEntity){
         return new AppUserDetails(
                 userEntity.getUsername(),
                 userEntity.getPassword(),
+                userEntity.isConfirmedEmail(),
+                true,true,true,
                 extractAuthorities(userEntity));
+
     }
 
     private List<GrantedAuthority> extractAuthorities(UserEntity userEntity){

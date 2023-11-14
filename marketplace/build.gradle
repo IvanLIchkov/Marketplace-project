@@ -24,10 +24,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.hsqldb:hsqldb'
 
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'com.icegreen:greenmail:2.0.0'
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation 'org.modelmapper:modelmapper:2.1.1'
 }

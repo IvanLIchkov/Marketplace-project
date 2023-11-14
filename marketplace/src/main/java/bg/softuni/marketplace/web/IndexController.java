@@ -2,7 +2,6 @@ package bg.softuni.marketplace.web;
 
 import bg.softuni.marketplace.model.AppUserDetails;
 import bg.softuni.marketplace.model.domain.CategoryEntity;
-import bg.softuni.marketplace.model.enums.CategoriesEnum;
 import bg.softuni.marketplace.service.CategoryService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

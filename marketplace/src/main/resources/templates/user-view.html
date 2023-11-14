@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" th:href="@{/css/user-view.css}">
+</head>
+<body>
+
+<div class="profile-container" th:object="${userInfo}">
+  <div class="profile-header">
+    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User Profile" class="profile-image">
+    <h1 th:text="|${userInfo.firstName} ${userInfo.lastName}|">John Doe</h1>
+  </div>
+  <div class="profile-details">
+    <p><strong>Username:</strong> <th:block th:text="${userInfo.username}"></th:block> </p>
+    <p><strong>Email:</strong> <th:block th:text="${userInfo.email}"></th:block></p>
+    <p><strong>First Name:</strong> <th:block th:text="${userInfo.firstName}"></th:block></p>
+    <p><strong>Last Name:</strong> <th:block th:text="${userInfo.lastName}"></th:block></p>
+    <p ><strong>Roles:</strong>
+      <span th:each="r : ${userInfo.getRoleEntities()}" class="role-badge" th:text="${#strings.capitalize(r.name.name().toLowerCase())}">Admin</span>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

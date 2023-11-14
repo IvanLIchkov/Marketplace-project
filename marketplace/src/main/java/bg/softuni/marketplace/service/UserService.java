@@ -6,7 +6,6 @@ import bg.softuni.marketplace.model.dto.UserViewForAdminPage;
 import org.springframework.security.core.Authentication;
 
 import java.util.List;
-import java.util.Set;
 import java.util.function.Consumer;
 
 public interface UserService {
@@ -19,7 +18,13 @@ public interface UserService {
 
     UserEntity getUser();
 
-    List<UserViewForAdminPage> allNonAdminUsers();
+    List<UserViewForAdminPage> adminPageViewUsers();
+
+    UserViewForAdminPage userView(Long id);
 
     UserEntity findUserByEmail(String email);
+
+    UserEntity findById(Long id);
+
+    void promoteUser(Long aLong);
 }

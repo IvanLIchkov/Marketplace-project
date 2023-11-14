@@ -1,12 +1,16 @@
 package bg.softuni.marketplace.service;
 
 import bg.softuni.marketplace.model.domain.RoleEntity;
+import bg.softuni.marketplace.model.enums.RolesEnum;
 
 import java.util.List;
-import java.util.Set;
 
 public interface RoleService {
     void init();
 
-    Set<RoleEntity> findAllRoles();
+    List<RoleEntity> findAllRoles();
+
+    List<RoleEntity> findUserRoleEntity();
+
+    RoleEntity findRoleByName(RolesEnum rolesEnum);
 }

@@ -21,6 +21,7 @@ public class TownServiceImpl implements TownService {
         return this.townRepository.findAll();
     }
 
+
     @Override
     public TownEntity findTownByName(String townName) {
 

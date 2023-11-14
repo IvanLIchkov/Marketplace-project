@@ -2,6 +2,7 @@ package bg.softuni.marketplace.model.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -27,7 +28,7 @@ public class UserEntity extends BaseEntity{
     private TownEntity townEntity;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<RoleEntity> roleEntities;
+    private List<RoleEntity> roleEntities;
 
     @OneToMany(mappedBy = "saller", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ItemEntity> itemsForSale;
@@ -96,11 +97,11 @@ public class UserEntity extends BaseEntity{
         return this;
     }
 
-    public Set<RoleEntity> getRoleEntities() {
+    public List<RoleEntity> getRoleEntities() {
         return roleEntities;
     }
 
-    public UserEntity setRoleEntities(Set<RoleEntity> roleEntities) {
+    public UserEntity setRoleEntities(List<RoleEntity> roleEntities) {
         this.roleEntities = roleEntities;
         return this;
     }
@@ -138,6 +139,11 @@ public class UserEntity extends BaseEntity{
 
     public UserEntity setConfirmedEmail(boolean confirmedEmail) {
         this.confirmedEmail = confirmedEmail;
+        return this;
+    }
+
+    public UserEntity addRole(RoleEntity roleEntity){
+        this.roleEntities.add(roleEntity);
         return this;
     }
 }

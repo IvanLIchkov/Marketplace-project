@@ -10,6 +10,6 @@
 <body>
     <h1>Hello, <th:block th:text="${username}"> Pesho</th:block></h1>
     <p>Welcome to Marketplace app!</p>
-    <p>please follow the <a class="card-link" th:href="@{http://localhost:8080/user/activate(activation_code=*{activation_link})}">link</a> in order to activate your account</p>
+    <p>please follow the <a class="card-link" th:href="|http://localhost:8080/user/activate/${activation_link}|">link</a> in order to activate your account</p>
 </body>
 </html>

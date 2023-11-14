@@ -3,12 +3,12 @@ package bg.softuni.marketplace.service.impl;
 import bg.softuni.marketplace.model.domain.UserEntity;
 import bg.softuni.marketplace.model.dto.UserRegisterDto;
 import bg.softuni.marketplace.model.dto.UserViewForAdminPage;
+import bg.softuni.marketplace.model.enums.RolesEnum;
 import bg.softuni.marketplace.model.events.UserRegisteredEvent;
 import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.RoleService;
 import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
-import org.hibernate.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.Authentication;
@@ -17,11 +17,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
                 .setFirstName(userRegisterDto.getFirstName())
                 .setLastName(userRegisterDto.getLastName())
                 .setEmail(userRegisterDto.getEmail())
-                .setRoleEntities(new HashSet<>())
+                .setRoleEntities(new ArrayList<>(this.roleService.findUserRoleEntity()))
                 .setPassword(passwordEncoder.encode(userRegisterDto.getPassword()))
                 .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()))
                 .setIpAddress(userRegisterDto.getIpAddress())
@@ -85,10 +85,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserViewForAdminPage> allNonAdminUsers() {
-        List<UserEntity> users = this.userRepository.findAll();
-        List<UserViewForAdminPage> collect = users.stream().map(this::mapEntityToAdminView).collect(Collectors.toList());
+    public List<UserViewForAdminPage> adminPageViewUsers() {
+        List<UserViewForAdminPage> collect = this.userRepository.findAll()
+                .stream()
+                .map(u -> this.mapper.map(u, UserViewForAdminPage.class))
+                .toList();
         return collect;
+    }
+
+    @Override
+    public UserViewForAdminPage userView(Long id){
+        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewForAdminPage.class)).orElseThrow(() -> new NoSuchElementException("No such user in database!"));
     }
 
     @Override
@@ -96,14 +103,19 @@ public class UserServiceImpl implements UserService {
         return this.userRepository.findByEmail(email).orElseThrow(NoSuchElementException::new);
     }
 
-
-    private UserViewForAdminPage mapEntityToAdminView(UserEntity user){
-        return new UserViewForAdminPage()
-                .setId(user.getId())
-                .setFullName(user.getFirstName() +" "+ user.getLastName())
-                .setEmail(user.getEmail())
-                .setUsername(user.getUsername());
+    @Override
+    public UserEntity findById(Long id) {
+        return this.userRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
+
+    @Override
+    public void promoteUser(Long userId) {
+        UserEntity userToPromote = this.userRepository.findById(userId).orElseThrow(NoSuchElementException::new);
+        userToPromote.addRole(this.roleService.findRoleByName(RolesEnum.ADMIN));
+        this.userRepository.save(userToPromote);
+    }
+
+
     private UserEntity newAdmin(){
         return new UserEntity()
                 .setUsername("admin")
@@ -122,6 +134,7 @@ public class UserServiceImpl implements UserService {
                 .setLastName("userov")
                 .setEmail("user@example.com")
                 .setPassword(passwordEncoder.encode("user"))
+                .setRoleEntities(this.roleService.findUserRoleEntity())
                 .setConfirmedEmail(true);
     }
 }
