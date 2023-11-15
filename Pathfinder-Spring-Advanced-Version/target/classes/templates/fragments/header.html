@@ -1,4 +1,0 @@
-<header xmlns:sec="http://www.w3.org/1999/xhtml">
-    <th:block sec:authorize="isAnonymous()" th:include="~{/fragments/guest-nav}" />
-    <th:block sec:authorize="isAuthenticated()"  th:include="~{/fragments/logged-nav}" />
-</header>
