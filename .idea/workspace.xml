@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some responsive bugs fix.">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/ItemDetailsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/ShowItemDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/item-details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-all-items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-items.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-items-by-category.html" afterDir="false" />
-    </list>
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Items details and some other small futures added." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +104,7 @@
       <workItem from="1700037785253" duration="3000" />
       <workItem from="1700037858766" duration="4538000" />
       <workItem from="1700042439951" duration="1504000" />
-      <workItem from="1700465385738" duration="9088000" />
+      <workItem from="1700465385738" duration="9850000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -140,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700465464485</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Items details and some other small futures added.">
+      <option name="closed" value="true" />
+      <created>1700483205141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700483205141</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Marketplace project upload in separate repo." />
     <MESSAGE value="Some responsive bugs fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some responsive bugs fix." />
+    <MESSAGE value="Items details and some other small futures added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Items details and some other small futures added." />
   </component>
 </project>
