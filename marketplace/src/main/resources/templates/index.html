@@ -38,7 +38,7 @@
                     </div>
                     <p class="card-text bg-white" style="width: fit-content" th:text="${c.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="|/items/all/${c.id}|">Show products from <th:block th:text="${ c.type.name().toLowerCase()}"></th:block> category!</a></div>
+                <div class="card-footer row"><a class="btn btn-primary btn-sm text-break col text-wrap" th:href="|/items/all/${c.id}|">Show products from <th:block th:text="${ c.type.name().toLowerCase()}"></th:block> category!</a></div>
             </div>
         </div>
     </div>

@@ -12,6 +12,7 @@ body{
     background-clip: border-box;
     border: 0 solid transparent;
     border-radius: 0;
+    overflow: hidden;
 }
 .btn-circle.btn-lg, .btn-group-lg>.btn-circle.btn {
     width: 50px;
@@ -35,8 +36,19 @@ body{
 .user-table tbody tr .category-select {
     max-width: 150px;
     border-radius: 20px;
+    overflow: auto;
 }
 .role_manage{
     display: flex;
     flex-direction: row-reverse;
+}
+@media screen and (max-width: 760px) {
+    .container {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 715px) {
+    .table td, .pl-4 {
+        padding: 0 !important;
+    }
 }

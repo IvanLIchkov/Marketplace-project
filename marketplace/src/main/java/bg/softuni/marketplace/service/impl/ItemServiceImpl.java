@@ -32,7 +32,7 @@ public class ItemServiceImpl implements ItemService {
     public void addItem(AddItemDto addItemDto, String fileName, MultipartFile multipartFile) throws IOException {
         ItemEntity persistedItem = this.itemRepository.save(itemMap(addItemDto));
 
-        String upload = "src/main/resources/static/images/usersPictures/" ;
+        String upload = "marketplace/src/main/resources/static/images/usersPictures" ;
 
         FileUploadUtil.saveFile(upload, fileName, multipartFile);
 
