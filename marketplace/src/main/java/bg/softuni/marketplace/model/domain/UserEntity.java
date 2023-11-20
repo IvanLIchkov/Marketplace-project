@@ -30,7 +30,7 @@ public class UserEntity extends BaseEntity{
     @ManyToMany(fetch = FetchType.EAGER)
     private List<RoleEntity> roleEntities;
 
-    @OneToMany(mappedBy = "saller", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ItemEntity> itemsForSale;
 
 //    @JoinColumn(name = "bought_items_id")

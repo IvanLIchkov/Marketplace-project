@@ -13,7 +13,7 @@
 <nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
 </nav>
 
-    <h1 class="text-center my-5" th:if="${items.size()>0}" th:text="|${items.getFirst().category.type} category!|">Test</h1>
+    <h1 class="text-center my-5" th:if="${items.size()>0}" th:text="|${#strings.capitalize(items.getFirst().category.type.name().toLowerCase())} category!|">Test</h1>
     <h1 class="text-center my-5" th:if="${items.size()==0}">No items from this category!</h1>
 <div>
     <div class="container mt-100">
@@ -25,7 +25,9 @@
                     </div></a>
                     <div class="card-body text-center">
                         <h4 class="card-title" th:text="${i.name}">Laptops</h4>
-                        <p class="text-muted" th:text="|Price is: ${i.price}|">Starting from $499</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Products</a>
+                        <p class="text-muted" th:text="|Price is: ${i.price}|">Starting from $499</p>
+                        <a class="btn btn-outline-primary btn-sm" th:href="|/items/details/${i.id}|" data-abc="true">View Products</a>
+
                     </div>
                 </div>
             </div>

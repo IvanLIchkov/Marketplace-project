@@ -28,7 +28,7 @@ public class ItemEntity extends BaseEntity{
     private CategoryEntity category;
 
     @ManyToOne
-    private UserEntity saller;
+    private UserEntity seller;
 
     @ManyToOne
     private UserEntity buyer;
@@ -87,12 +87,12 @@ public class ItemEntity extends BaseEntity{
         return this;
     }
 
-    public UserEntity getSaller() {
-        return saller;
+    public UserEntity getSeller() {
+        return seller;
     }
 
-    public ItemEntity setSaller(UserEntity saller) {
-        this.saller = saller;
+    public ItemEntity setSeller(UserEntity seller) {
+        this.seller = seller;
         return this;
     }
 

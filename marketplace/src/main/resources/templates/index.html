@@ -32,13 +32,24 @@
         <div  th:each="c : ${categories}" class="col-md-4 mb-5" >
             <div   class=" card h-100">
                 <div class="card-body bg-opacity-0"  >
-                    <h2 class="text- card-title bg-white" style="width: fit-content" th:text="${c.type.name()}">Card One</h2>
+                    <h2 class="text- card-title bg-white" style="width: fit-content" th:text="${#strings.capitalize(c.type.name().toLowerCase())}">Card One</h2>
                     <div class="card-img-top-wrapper">
                         <img class="card-img-top" th:src="'/images/'+${c.type.name().toLowerCase()}+'.jpg'" alt="image">
                     </div>
                     <p class="card-text bg-white" style="width: fit-content" th:text="${c.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="|/items/all/${c.id}|">Show products from <th:block th:text="${ c.type.name().toLowerCase()}"></th:block> category!</a></div>
+                <div class="card-footer row"><a class="btn btn-primary btn-sm text-break col text-wrap" th:href="|/items/all/${c.id}|">Show products from <th:block th:text="${ c.type.name().toLowerCase()}"></th:block> category!</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5" >
+            <div   class=" card h-100">
+                <div class="card-body bg-opacity-0"  >
+                    <h2 class="text- card-title bg-white" style="width: fit-content">All items</h2>
+                    <div class="card-img-top-wrapper">
+                        <img class="card-img-top" th:src="'/images/all-items.jpg'" alt="image">
+                    </div>
+                </div>
+                <div class="card-footer row"><a class="btn btn-primary btn-sm text-break col text-wrap" th:href="|/items/all|">Show all items</a></div>
             </div>
         </div>
     </div>

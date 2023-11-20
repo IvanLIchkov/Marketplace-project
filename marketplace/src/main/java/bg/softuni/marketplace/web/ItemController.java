@@ -3,6 +3,8 @@ package bg.softuni.marketplace.web;
 import bg.softuni.marketplace.model.domain.CategoryEntity;
 import bg.softuni.marketplace.model.domain.ItemEntity;
 import bg.softuni.marketplace.model.dto.AddItemDto;
+import bg.softuni.marketplace.model.dto.ItemDetailsDto;
+import bg.softuni.marketplace.model.dto.ShowItemDto;
 import bg.softuni.marketplace.service.CategoryService;
 import bg.softuni.marketplace.service.ItemService;
 import jakarta.validation.Valid;
@@ -67,12 +69,27 @@ public class ItemController {
         this.itemService.addItem(addItemDto,fileName, multipartFile);
         return "redirect:/";
     }
+    @GetMapping("/all")
+    public ModelAndView showAllItems( ModelAndView modelAndView){
+        List<ShowItemDto> showItemDtos = this.itemService.allItems();
+        modelAndView.setViewName("show-all-items");
+        modelAndView.addObject("allItems", showItemDtos);
+        return modelAndView;
+    }
 
     @GetMapping("/all/{id}")
     public ModelAndView itemsSpecificCategory(@PathVariable String id, ModelAndView modelAndView){
         List<ItemEntity> itemEntities = itemService.allItemsByType(Long.valueOf(id));
-        modelAndView.setViewName("show-items");
+        modelAndView.setViewName("show-items-by-category");
         modelAndView.addObject("items", itemEntities);
+        return modelAndView;
+    }
+
+    @GetMapping("/details/{id}")
+    public ModelAndView itemDetails(@PathVariable String id, ModelAndView modelAndView){
+        ItemDetailsDto itemDetailsDto = this.itemService.itemDetailsById(id);
+        modelAndView.setViewName("item-details");
+        modelAndView.addObject("itemDetails", itemDetailsDto);
         return modelAndView;
     }
 }
