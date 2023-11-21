@@ -22,6 +22,8 @@ public class ItemDetailsDto {
 
     private String sellerUsername;
 
+    private boolean isOwner;
+
     public ItemDetailsDto(long id,
                           String pictureUrl,
                           String name,
@@ -109,6 +111,15 @@ public class ItemDetailsDto {
 
     public ItemDetailsDto setSellerUsername(String sellerUsername) {
         this.sellerUsername = sellerUsername;
+        return this;
+    }
+
+    public boolean isOwner() {
+        return isOwner;
+    }
+
+    public ItemDetailsDto setOwner(boolean owner) {
+        isOwner = owner;
         return this;
     }
 }

@@ -26,5 +26,7 @@ public interface UserService {
 
     UserEntity findById(Long id);
 
+    UserEntity findByUsername(String username);
+
     void promoteUser(Long aLong);
 }

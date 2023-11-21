@@ -34,7 +34,7 @@ public class UserEntity extends BaseEntity{
     private Set<ItemEntity> itemsForSale;
 
 //    @JoinColumn(name = "bought_items_id")
-    @OneToMany(mappedBy = "buyer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany
     private Set<ItemEntity> boughtItemEntities;
 
     @Column

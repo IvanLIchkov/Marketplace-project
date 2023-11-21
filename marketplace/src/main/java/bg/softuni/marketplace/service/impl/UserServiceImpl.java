@@ -14,11 +14,11 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
@@ -70,13 +70,6 @@ public class UserServiceImpl implements UserService {
         applicationEventPublisher.publishEvent(
                 new UserRegisteredEvent("UserService",
                         userRegisterDto.getEmail(),userRegisterDto.getUsername()));
-
-//        UserDetails userDetails = userDetailsService.loadUserByUsername(userRegisterDto.getUsername());
-//
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(
-//                userDetails, userDetails.getPassword(), userDetails.getAuthorities());
-//
-//        successfulLoginProcessor.accept(authentication);
     }
 
     @Override
@@ -106,6 +99,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity findById(Long id) {
         return this.userRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public UserEntity findByUsername(String username){
+        return this.userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User with that username doesn't exist in database!"));
     }
 
     @Override

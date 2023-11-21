@@ -26,7 +26,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title" th:text="${i.name}">Laptops</h4>
                         <p class="text-muted" th:text="|Price is: ${i.price}|">Starting from $499</p>
-                        <a class="btn btn-outline-primary btn-sm" th:href="@{/items/details/${i.id}}" data-abc="true">View Products</a>
+                        <a class="btn btn-outline-primary btn-sm" th:href="@{/items/details/{id}(id=${i.id})}" data-abc="true">View Products</a>
 
                     </div>
                 </div>

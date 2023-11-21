@@ -30,8 +30,6 @@ public class ItemEntity extends BaseEntity{
     @ManyToOne
     private UserEntity seller;
 
-    @ManyToOne
-    private UserEntity buyer;
 
     public String getName() {
         return name;
@@ -96,12 +94,4 @@ public class ItemEntity extends BaseEntity{
         return this;
     }
 
-    public UserEntity getBuyer() {
-        return buyer;
-    }
-
-    public ItemEntity setBuyer(UserEntity buyer) {
-        this.buyer = buyer;
-        return this;
-    }
 }

@@ -8,6 +8,9 @@ import bg.softuni.marketplace.model.dto.ShowItemDto;
 import bg.softuni.marketplace.service.CategoryService;
 import bg.softuni.marketplace.service.ItemService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -51,6 +54,7 @@ public class ItemController {
     public String add(@Valid AddItemDto addItemDto,
                       BindingResult bindingResult,
                       RedirectAttributes redirectAttributes,
+                      @AuthenticationPrincipal UserDetails seller,
                       @RequestParam("picture") MultipartFile multipartFile) throws IOException {
         if(bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addItemDto", bindingResult);
@@ -66,7 +70,7 @@ public class ItemController {
                 addItemDto.setPicture(null);
             }
         }
-        this.itemService.addItem(addItemDto,fileName, multipartFile);
+        this.itemService.addItem(addItemDto, seller , fileName, multipartFile);
         return "redirect:/";
     }
     @GetMapping("/all")
@@ -86,8 +90,9 @@ public class ItemController {
     }
 
     @GetMapping("/details/{id}")
-    public ModelAndView itemDetails(@PathVariable String id, ModelAndView modelAndView){
-        ItemDetailsDto itemDetailsDto = this.itemService.itemDetailsById(id);
+    public ModelAndView itemDetails(@PathVariable String id, ModelAndView modelAndView,
+                                    @AuthenticationPrincipal UserDetails viewer){
+        ItemDetailsDto itemDetailsDto = this.itemService.itemDetailsById(id, viewer);
         modelAndView.setViewName("item-details");
         modelAndView.addObject("itemDetails", itemDetailsDto);
         return modelAndView;

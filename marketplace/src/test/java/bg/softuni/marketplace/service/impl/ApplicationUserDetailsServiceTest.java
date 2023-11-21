@@ -83,7 +83,7 @@ public class ApplicationUserDetailsServiceTest {
                 .setEmail("email@test.com")
                 .setPassword("topSecret")
                 .setConfirmedEmail(false)
-                .setRoleEntities(Set.of(
+                .setRoleEntities(List.of(
                         new RoleEntity().setName(RolesEnum.ADMIN),
                         new RoleEntity().setName(RolesEnum.USER)
                 ));

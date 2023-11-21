@@ -20,7 +20,7 @@ public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
     @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.pictureUrl, i.name, i.price, i.description, c.type, u.id, u.username) from ItemEntity i " +
             "join CategoryEntity c on i.category.id = c.id " +
             "join UserEntity u on i.seller.id = u.id " +
-            "where i.id = 1")
+            "where i.id = :id")
     Optional<ItemDetailsDto> itemDetails(@Param("id") Long id);
 
 }

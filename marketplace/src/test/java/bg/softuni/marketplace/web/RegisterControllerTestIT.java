@@ -67,8 +67,8 @@ class RegisterControllerTestIT {
                 .param("confirmPassword", "testPassword")
                 .param("townName", "testTownName")
                 .with(csrf())
-        ).andExpect(status().is3xxRedirection())
-                        .andExpect(view().name("redirect:/"));
+        ).andExpect(status().is2xxSuccessful())
+                        .andExpect(view().name("signup"));
 
         greenMail.waitForIncomingEmail(1);
         MimeMessage[] mimeMessages = greenMail.getReceivedMessages();

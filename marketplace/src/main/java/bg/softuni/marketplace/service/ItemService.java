@@ -6,6 +6,7 @@ import bg.softuni.marketplace.model.dto.AddItemDto;
 import bg.softuni.marketplace.model.dto.ItemDetailsDto;
 import bg.softuni.marketplace.model.dto.ShowItemDto;
 import bg.softuni.marketplace.model.enums.CategoriesEnum;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -13,9 +14,9 @@ import java.util.List;
 
 public interface ItemService {
 
-    void addItem(AddItemDto addItemDto, String fileName, MultipartFile multipartFile) throws IOException;
+    void addItem(AddItemDto addItemDto, UserDetails seller, String fileName, MultipartFile multipartFile) throws IOException;
 
-    ItemDetailsDto itemDetailsById(String id);
+    ItemDetailsDto itemDetailsById(String id, UserDetails viewer);
 
     List<ShowItemDto> allItems();
 
