@@ -2,10 +2,9 @@ package bg.softuni.marketplace.model.dto;
 
 import bg.softuni.marketplace.model.domain.RoleEntity;
 
-import java.util.List;
 import java.util.Set;
 
-public class UserViewForAdminPage {
+public class UserViewDto {
 
     private Long id;
 
@@ -26,7 +25,7 @@ public class UserViewForAdminPage {
         return id;
     }
 
-    public UserViewForAdminPage setId(Long id) {
+    public UserViewDto setId(Long id) {
         this.id = id;
         return this;
     }
@@ -35,7 +34,7 @@ public class UserViewForAdminPage {
         return firstName;
     }
 
-    public UserViewForAdminPage setFirstName(String firstName) {
+    public UserViewDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -44,7 +43,7 @@ public class UserViewForAdminPage {
         return lastName;
     }
 
-    public UserViewForAdminPage setLastName(String lastName) {
+    public UserViewDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -53,7 +52,7 @@ public class UserViewForAdminPage {
         return username;
     }
 
-    public UserViewForAdminPage setUsername(String username) {
+    public UserViewDto setUsername(String username) {
         this.username = username;
         return this;
     }
@@ -62,7 +61,7 @@ public class UserViewForAdminPage {
         return email;
     }
 
-    public UserViewForAdminPage setEmail(String email) {
+    public UserViewDto setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -71,7 +70,7 @@ public class UserViewForAdminPage {
         return town;
     }
 
-    public UserViewForAdminPage setTown(String town) {
+    public UserViewDto setTown(String town) {
         this.town = town;
         return this;
     }
@@ -81,7 +80,7 @@ public class UserViewForAdminPage {
         return roleEntities;
     }
 
-    public UserViewForAdminPage setRoleEntities(Set<RoleEntity> roleEntities) {
+    public UserViewDto setRoleEntities(Set<RoleEntity> roleEntities) {
         this.roleEntities = roleEntities;
         return this;
     }

@@ -2,7 +2,7 @@ package bg.softuni.marketplace.service.impl;
 
 import bg.softuni.marketplace.model.domain.UserEntity;
 import bg.softuni.marketplace.model.dto.UserRegisterDto;
-import bg.softuni.marketplace.model.dto.UserViewForAdminPage;
+import bg.softuni.marketplace.model.dto.UserViewDto;
 import bg.softuni.marketplace.model.enums.RolesEnum;
 import bg.softuni.marketplace.model.events.UserRegisteredEvent;
 import bg.softuni.marketplace.repository.UserRepository;
@@ -78,17 +78,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserViewForAdminPage> adminPageViewUsers() {
-        List<UserViewForAdminPage> collect = this.userRepository.findAll()
+    public List<UserViewDto> adminPageViewUsers() {
+        List<UserViewDto> collect = this.userRepository.findAll()
                 .stream()
-                .map(u -> this.mapper.map(u, UserViewForAdminPage.class))
+                .map(u -> this.mapper.map(u, UserViewDto.class))
                 .toList();
         return collect;
     }
 
     @Override
-    public UserViewForAdminPage userView(Long id){
-        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewForAdminPage.class)).orElseThrow(() -> new NoSuchElementException("No such user in database!"));
+    public UserViewDto userView(Long id){
+        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewDto.class)).orElseThrow(() -> new NoSuchElementException("No such user in database!"));
     }
 
     @Override

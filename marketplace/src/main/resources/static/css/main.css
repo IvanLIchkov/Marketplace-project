@@ -64,3 +64,7 @@ form.main-form {
 .nav-content{
   margin-bottom: 0px;
 }
+.card-img-top-wrapper {
+  height: 150px;
+  overflow:hidden;
+}

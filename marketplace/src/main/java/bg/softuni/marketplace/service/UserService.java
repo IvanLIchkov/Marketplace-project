@@ -2,7 +2,7 @@ package bg.softuni.marketplace.service;
 
 import bg.softuni.marketplace.model.domain.UserEntity;
 import bg.softuni.marketplace.model.dto.UserRegisterDto;
-import bg.softuni.marketplace.model.dto.UserViewForAdminPage;
+import bg.softuni.marketplace.model.dto.UserViewDto;
 import org.springframework.security.core.Authentication;
 
 import java.util.List;
@@ -18,9 +18,9 @@ public interface UserService {
 
     UserEntity getUser();
 
-    List<UserViewForAdminPage> adminPageViewUsers();
+    List<UserViewDto> adminPageViewUsers();
 
-    UserViewForAdminPage userView(Long id);
+    UserViewDto userView(Long id);
 
     UserEntity findUserByEmail(String email);
 

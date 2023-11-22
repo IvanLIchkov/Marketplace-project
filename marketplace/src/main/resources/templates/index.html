@@ -32,7 +32,7 @@
         <div  th:each="c : ${categories}" class="col-md-4 mb-5" >
             <div   class=" card h-100">
                 <div class="card-body bg-opacity-0"  >
-                    <h2 class="text- card-title bg-white" style="width: fit-content" th:text="${c.type.name()}">Card One</h2>
+                    <h2 class="text- card-title bg-white" style="width: fit-content" th:text="${#strings.capitalize(c.type.name().toLowerCase())}">Card One</h2>
                     <div class="card-img-top-wrapper">
                         <img class="card-img-top" th:src="'/images/'+${c.type.name().toLowerCase()}+'.jpg'" alt="image">
                     </div>

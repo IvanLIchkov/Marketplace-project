@@ -16,4 +16,6 @@ public interface RoleRepository extends JpaRepository<RoleEntity, Long> {
     Set<RoleEntity> findByName(RolesEnum rolesEnum);
 
     RoleEntity findRoleEntitiesByName(RolesEnum rolesEnum);
+
+    List<RoleEntity> findAllByNameIn(List<RolesEnum> roles);
 }

@@ -18,7 +18,11 @@ public interface ItemService {
 
     ItemDetailsDto itemDetailsById(String id, UserDetails viewer);
 
+    boolean isOwner(Long itemId, UserDetails viewer);
+
     List<ShowItemDto> allItems();
 
     List<ItemEntity> allItemsByType(Long categoryId);
+
+    void deleteOffer(Long id);
 }

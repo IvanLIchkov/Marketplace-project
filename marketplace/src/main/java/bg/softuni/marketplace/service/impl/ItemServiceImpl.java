@@ -13,6 +13,7 @@ import bg.softuni.marketplace.service.CategoryService;
 import bg.softuni.marketplace.service.ItemService;
 import bg.softuni.marketplace.service.UserService;
 import bg.softuni.marketplace.util.FileUploadUtil;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -55,11 +55,12 @@ public class ItemServiceImpl implements ItemService {
         ItemDetailsDto itemDetailsDto = this.itemRepository
                 .itemDetails(Long.valueOf(id))
                 .orElseThrow(() -> new NoSuchElementException("Item is not found in database!"));
-        itemDetailsDto.setOwner(isOwner(itemDetailsDto.getSellerId(), viewer));
+        itemDetailsDto.setOwner(isOwner(itemDetailsDto.getId(), viewer));
         return itemDetailsDto;
     }
 
-    private boolean isOwner(Long sellerId, UserDetails viewer){
+    @Override
+    public boolean isOwner(Long itemId, UserDetails viewer){
         if(viewer == null){
             return false;
         }
@@ -68,7 +69,7 @@ public class ItemServiceImpl implements ItemService {
             return true;
         }
 
-        return Objects.equals(sellerId, viewerEntity.getId());
+        return Objects.equals(this.itemRepository.findById(itemId).orElseThrow(() -> new NoSuchElementException("Element doesn't contain.")).getSeller().getId(), viewerEntity.getId());
     }
 
     private boolean isAdmin(UserEntity user){
@@ -91,6 +92,12 @@ public class ItemServiceImpl implements ItemService {
         CategoryEntity categoryById = this.categoryService.getCategoryById(categoryId);
 
         return this.itemRepository.findAllByCategory(categoryById);
+    }
+
+    @Override
+    @Transactional
+    public void deleteOffer(Long id) {
+        this.itemRepository.deleteById(id);
     }
 
     private ItemEntity itemMap(AddItemDto addItemDto, UserDetails seller){

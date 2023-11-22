@@ -12,7 +12,7 @@
     <div class="container px-5">
         <div class="nav nav-pills flex-column flex-sm-row align-items-center">
             <a class="navbar-brand" th:href="@{/}">Best marketplace</a>
-            <div class="text-white">Welcome, <th:block  sec:authentication="name"></th:block>!</div>
+            <div sec:authorize="isAuthenticated()" class="text-white">Welcome, <th:block  sec:authentication="name"></th:block>!</div>
         </div>
 <!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
         <div class="nav justify-content-end" id="navbarSupportedContent">

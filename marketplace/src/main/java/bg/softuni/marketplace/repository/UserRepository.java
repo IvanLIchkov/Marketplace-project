@@ -1,17 +1,10 @@
 package bg.softuni.marketplace.repository;
 
-import bg.softuni.marketplace.model.domain.RoleEntity;
 import bg.softuni.marketplace.model.domain.UserEntity;
-import bg.softuni.marketplace.model.dto.UserViewForAdminPage;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {

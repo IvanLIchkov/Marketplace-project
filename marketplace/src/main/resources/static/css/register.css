@@ -47,3 +47,13 @@ footer {
 .error-color{
     text: red;
 }
+form{
+    width: 25%;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 900px){
+    form{
+        width: 75% !important;
+    }
+}
