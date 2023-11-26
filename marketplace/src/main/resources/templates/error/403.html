@@ -2,7 +2,7 @@
 <html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/head::head">
 
-    <title>Error 404 page</title></head>
+    <title>Error 403 page</title></head>
 <body>
 <nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>
@@ -11,13 +11,13 @@
     <div class="flex-column gap-5 d-flex justify-content-center align-items-center height-vh">
         <div class="col-lg-6 col-12">
             <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="main-heading text-danger">Error 404!</h1>
-                <h2 class="text-danger">We do not found what you want!</h2>
+                <h1 class="main-heading text-danger">Error 403!</h1>
+                <h2 class="text-danger">You don't have permission to do that here!?</h2>
             </div>
         </div>
         <div class="col-lg-6 col-12">
             <div class="col-md-12">
-                <img th:src="@{/images/error-images/error-404.jpg}" width="100%" height="600px" alt="500 error">
+                <img th:src="@{/images/error-images/error-403.jpg}" width="100%" height="600px" alt="500 error">
             </div>
         </div>
     </div>

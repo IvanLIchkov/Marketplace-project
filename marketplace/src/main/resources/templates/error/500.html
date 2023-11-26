@@ -7,22 +7,17 @@
 <nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>
 <body>
-<div class="container-fluid">
-    <div class="flex-column d-flex justify-content-center align-items-center height-vh">
+<div class="container-fluid p-5">
+    <div class="flex-column gap-5 d-flex justify-content-center align-items-center height-vh">
         <div class="col-lg-6 col-12">
             <div class="col-12 d-flex flex-column justify-content-center align-items-center">
                 <h1 class="main-heading text-danger">Error 500!</h1>
-                <h2 class="text-danger">Sorry we have fatal error our team is trying to resolve it.</h2>
-                <div class="text-center mt-4 mb-5">
-                    <button class="btn btn-success px-3 mr-2"><i class="fa fa-home"></i> Home</button>
-                    <button class="btn btn-success px-3 mr-2"><i class="fa fa-phone"></i> Contact</button>
-                    <button class="btn btn-success px-3 mr-2"><i class="fa fa-info"></i> Report</button>
-                </div>
+                <h2 class="text-danger">Ohhh no! We have error here but don't worry our team is resolving it!</h2>
             </div>
         </div>
         <div class="col-lg-6 col-12">
             <div class="col-md-12">
-                <img th:src="@{/images/error-500.png}" width="100%" alt="500 error">
+                <img th:src="@{/images/error-images/error-500.png}" width="100%" height="600px" alt="500 error">
             </div>
         </div>
     </div>

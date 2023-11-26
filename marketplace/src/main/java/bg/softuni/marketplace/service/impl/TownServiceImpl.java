@@ -3,6 +3,7 @@ package bg.softuni.marketplace.service.impl;
 import bg.softuni.marketplace.model.domain.TownEntity;
 import bg.softuni.marketplace.repository.TownRepository;
 import bg.softuni.marketplace.service.TownService;
+import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,6 +27,6 @@ public class TownServiceImpl implements TownService {
     public TownEntity findTownByName(String townName) {
 
 
-        return this.townRepository.findByName(townName).orElse(null);
+        return this.townRepository.findByName(townName).orElseThrow(() -> new ObjectNotFoundException("Town with "+ townName + " not found!"));
     }
 }

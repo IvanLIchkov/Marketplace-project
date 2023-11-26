@@ -12,6 +12,7 @@ import bg.softuni.marketplace.repository.ItemRepository;
 import bg.softuni.marketplace.service.CategoryService;
 import bg.softuni.marketplace.service.ItemService;
 import bg.softuni.marketplace.service.UserService;
+import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import bg.softuni.marketplace.util.FileUploadUtil;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
@@ -54,7 +55,7 @@ public class ItemServiceImpl implements ItemService {
     public ItemDetailsDto itemDetailsById(String id, UserDetails viewer){
         ItemDetailsDto itemDetailsDto = this.itemRepository
                 .itemDetails(Long.valueOf(id))
-                .orElseThrow(() -> new NoSuchElementException("Item is not found in database!"));
+                .orElseThrow(() -> new ObjectNotFoundException("Item is not found in database!"));
         itemDetailsDto.setOwner(isOwner(itemDetailsDto.getId(), viewer));
         return itemDetailsDto;
     }
@@ -69,7 +70,7 @@ public class ItemServiceImpl implements ItemService {
             return true;
         }
 
-        return Objects.equals(this.itemRepository.findById(itemId).orElseThrow(() -> new NoSuchElementException("Element doesn't contain.")).getSeller().getId(), viewerEntity.getId());
+        return Objects.equals(this.itemRepository.findById(itemId).orElseThrow(() -> new ObjectNotFoundException("Element doesn't contain.")).getSeller().getId(), viewerEntity.getId());
     }
 
     private boolean isAdmin(UserEntity user){

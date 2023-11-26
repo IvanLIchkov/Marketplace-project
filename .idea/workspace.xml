@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Admin page permission bug found and resolved.">
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Spring security config refactoring.">
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-403.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-404.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-404.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-500.png" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -92,6 +104,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images\error-images" />
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images" />
     </key>
   </component>
@@ -172,7 +185,7 @@
       <workItem from="1700511780838" duration="2237000" />
       <workItem from="1700514028612" duration="2852000" />
       <workItem from="1700556878453" duration="22179000" />
-      <workItem from="1700985158402" duration="4961000" />
+      <workItem from="1700985158402" duration="7801000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -222,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700993185635</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Spring security config refactoring.">
+      <option name="closed" value="true" />
+      <created>1700993696441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700993696441</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +267,8 @@
     <MESSAGE value="Some futures added and responsive category page." />
     <MESSAGE value="Error 404 and error 500 default page." />
     <MESSAGE value="Admin page permission bug found and resolved." />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin page permission bug found and resolved." />
+    <MESSAGE value="Spring security config refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring security config refactoring." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,7 +302,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java</url>
-          <line>89</line>
+          <line>90</line>
           <properties class="bg.softuni.marketplace.service.impl.ItemServiceImpl" method="allItemsByType">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

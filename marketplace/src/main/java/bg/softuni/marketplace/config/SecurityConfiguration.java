@@ -40,10 +40,10 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, SecurityContextRepository securityContextRepository) throws Exception {
-        http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.
+        return http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
-                requestMatchers("/users/login**","/users/login-error**").permitAll().
-                requestMatchers("/", "/users/register", "/user/activate/{code}").anonymous().
+                requestMatchers("/users/login**","/users/login-error**", "/").permitAll().
+                requestMatchers( "/users/register", "/user/activate/{code}").anonymous().
                 requestMatchers("/admin", "/admin/manage").hasRole(RolesEnum.ADMIN.name()).
                         anyRequest().authenticated())
                 .formLogin(
@@ -69,7 +69,6 @@ public class SecurityConfiguration {
                             }
                 ).build();
 
-        return http.build();
     }
     @Bean
     public PasswordEncoder passwordEncoder(){

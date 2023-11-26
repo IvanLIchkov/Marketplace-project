@@ -9,6 +9,7 @@ import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.RoleService;
 import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
+import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.Authentication;
@@ -88,7 +89,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserViewDto userView(Long id){
-        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewDto.class)).orElseThrow(() -> new NoSuchElementException("No such user in database!"));
+        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewDto.class)).orElseThrow(() -> new ObjectNotFoundException("No such user in database!"));
     }
 
     @Override

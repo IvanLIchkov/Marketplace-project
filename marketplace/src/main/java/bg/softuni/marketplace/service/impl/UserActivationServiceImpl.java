@@ -8,6 +8,7 @@ import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.EmailService;
 import bg.softuni.marketplace.service.UserActivationService;
 import bg.softuni.marketplace.service.UserService;
+import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +47,7 @@ public class UserActivationServiceImpl implements UserActivationService {
     public void activateUser(String activationCode){
         UserActivationLinkEntity userActivationLinkEntity =
                 this.userActivationLinkRepository.findByActivationLink(activationCode)
-                        .orElseThrow(() -> new NoSuchElementException("Activation code not found may be expired!"));
+                        .orElseThrow(() -> new ObjectNotFoundException("Activation code not found may be expired!"));
 
         this.userRepository.save(userActivationLinkEntity.getUser().setConfirmedEmail(true));
 
