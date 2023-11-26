@@ -4,6 +4,7 @@ import bg.softuni.marketplace.model.domain.CategoryEntity;
 import bg.softuni.marketplace.model.enums.CategoriesEnum;
 import bg.softuni.marketplace.repository.CategoryRepository;
 import bg.softuni.marketplace.service.CategoryService;
+import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -47,7 +48,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryEntity getCategoryById(Long categoryId) {
-        return this.categoryRepository.findById(categoryId).orElseThrow(() -> new NoSuchElementException("Category is not found!"));
+        return this.categoryRepository.findById(categoryId).orElseThrow(() -> new ObjectNotFoundException("Category is not found!"));
     }
 
 

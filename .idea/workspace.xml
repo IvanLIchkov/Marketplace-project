@@ -4,38 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Delete button in item details.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/testutils/TestDataUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/testutils/UserTestDataUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/ItemControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" afterDir="false" />
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some futures added and responsive category page.">
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/exceptions/ObjectNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserViewForAdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserViewDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/show-items.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/show-items.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/blocked.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/blocked.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/manage-users-admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/manage-users-admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-all-items.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-all-items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-items-by-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/show-items-by-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +46,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -87,37 +66,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/SoftUni Repos/Spring-Advanced/marketplace&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14941406&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;84e8c39452eb127d6df93567d0c7291a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/SoftUni Repos/Spring-Advanced/marketplace",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.14941406",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "84e8c39452eb127d6df93567d0c7291a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;redshift&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redshift",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.MarketplaceApplication">
     <configuration name="RegisterControllerTestIT.testRegisterNewUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -194,7 +179,8 @@
       <workItem from="1700509564318" duration="363000" />
       <workItem from="1700511780838" duration="2237000" />
       <workItem from="1700514028612" duration="2852000" />
-      <workItem from="1700556878453" duration="21510000" />
+      <workItem from="1700556878453" duration="22179000" />
+      <workItem from="1700985158402" duration="4598000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -220,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700567577183</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Some futures added and responsive category page.">
+      <option name="closed" value="true" />
+      <created>1700671084977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700671084977</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +235,8 @@
     <MESSAGE value="Items details and some other small futures added." />
     <MESSAGE value="Marketplace project upload in separate repo." />
     <MESSAGE value="Delete button in item details." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete button in item details." />
+    <MESSAGE value="Some futures added and responsive category page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some futures added and responsive category page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -257,17 +252,35 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>103</line>
+          <line>104</line>
           <properties class="bg.softuni.marketplace.web.ItemController" method="deleteItem">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
+          <line>85</line>
+          <properties class="bg.softuni.marketplace.web.ItemController" method="itemsSpecificCategory">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java</url>
           <line>89</line>
-          <option name="timeStamp" value="4" />
+          <properties class="bg.softuni.marketplace.service.impl.ItemServiceImpl" method="allItemsByType">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

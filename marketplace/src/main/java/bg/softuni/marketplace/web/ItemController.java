@@ -84,6 +84,7 @@ public class ItemController {
 
     @GetMapping("/all/{id}")
     public ModelAndView itemsSpecificCategory(@PathVariable String id, ModelAndView modelAndView){
+
         List<ItemEntity> itemEntities = itemService.allItemsByType(Long.valueOf(id));
         modelAndView.setViewName("show-items-by-category");
         modelAndView.addObject("items", itemEntities);

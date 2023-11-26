@@ -2,6 +2,7 @@ package bg.softuni.marketplace.web;
 
 import bg.softuni.marketplace.model.dto.UserViewDto;
 import bg.softuni.marketplace.service.UserService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
