@@ -40,37 +40,34 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, SecurityContextRepository securityContextRepository) throws Exception {
-        http.
-                // defines which pages will be authorized
-                        authorizeHttpRequests().
-                // allow access to all static files (images, CSS, js)
-                        requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
-                requestMatchers("/users/login**").permitAll().
-                requestMatchers("/users/login-error**").permitAll().
-                // the URL-s below are available for all users - logged in and anonymous
-                        requestMatchers("/").permitAll().
-                        requestMatchers("/", "/users/register", "/user/activate/{code}").anonymous().
+        http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.
+                requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
+                requestMatchers("/users/login**","/users/login-error**").permitAll().
+                requestMatchers("/", "/users/register", "/user/activate/{code}").anonymous().
                 requestMatchers("/admin", "/admin/manage").hasRole(RolesEnum.ADMIN.name()).
-                // only for moderators
-                anyRequest().authenticated().
-                and().
-                // configure login with HTML form
-                        formLogin(
-                                formLogin ->{
-                                    formLogin
-                                            .loginPage("/users/login")
-                                            .usernameParameter("username")
-                                            .passwordParameter("password")
-                                            .defaultSuccessUrl("/", true)
-                                            .failureHandler(handleAuthenticationFailure());
-                                }
-                )
-                .logout()
-                .logoutUrl("/users/logout")
-                .logoutSuccessUrl("/")
-                .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID")
-                .and().securityContext().securityContextRepository(securityContextRepository);
+                        anyRequest().authenticated())
+                .formLogin(
+                        formLogin ->{
+                            formLogin
+                                    .loginPage("/users/login")
+                                    .usernameParameter("username")
+                                    .passwordParameter("password")
+                                    .defaultSuccessUrl("/", true)
+                                    .failureHandler(handleAuthenticationFailure());
+                            }
+                ).logout(logout -> {
+                            logout
+                                    .logoutUrl("/users/logout")
+                                    .logoutSuccessUrl("/")
+                                    .invalidateHttpSession(true)
+                                    .deleteCookies("JSESSIONID");
+
+                            }
+
+                ).securityContext(securityContext ->{
+                    securityContext.securityContextRepository(securityContextRepository);
+                            }
+                ).build();
 
         return http.build();
     }
