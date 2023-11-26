@@ -50,7 +50,7 @@ public class SecurityConfiguration {
                 // the URL-s below are available for all users - logged in and anonymous
                         requestMatchers("/").permitAll().
                         requestMatchers("/", "/users/register", "/user/activate/{code}").anonymous().
-                requestMatchers("/admin").hasRole(RolesEnum.ADMIN.name()).
+                requestMatchers("/admin", "/admin/manage").hasRole(RolesEnum.ADMIN.name()).
                 // only for moderators
                 anyRequest().authenticated().
                 and().
