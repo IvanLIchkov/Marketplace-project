@@ -12,8 +12,8 @@ public class ItemEntity extends BaseEntity{
     @Column(nullable = false)
     private String name;
 
-    @Column(length = 64)
-    private String pictureUrl;
+    @OneToOne
+    private FileEntity image;
 
     @Column(nullable = false)
     private BigDecimal price;
@@ -30,6 +30,8 @@ public class ItemEntity extends BaseEntity{
     @ManyToOne
     private UserEntity seller;
 
+    @ManyToOne
+    private UserEntity buyer;
 
     public String getName() {
         return name;
@@ -40,12 +42,12 @@ public class ItemEntity extends BaseEntity{
         return this;
     }
 
-    public String getPictureUrl() {
-        return pictureUrl;
+    public FileEntity getImage() {
+        return image;
     }
 
-    public ItemEntity setPictureUrl(String picture) {
-        this.pictureUrl = picture;
+    public ItemEntity setImage(FileEntity image) {
+        this.image = image;
         return this;
     }
 
@@ -94,4 +96,12 @@ public class ItemEntity extends BaseEntity{
         return this;
     }
 
+    public UserEntity getBuyer() {
+        return buyer;
+    }
+
+    public ItemEntity setBuyer(UserEntity buyer) {
+        this.buyer = buyer;
+        return this;
+    }
 }

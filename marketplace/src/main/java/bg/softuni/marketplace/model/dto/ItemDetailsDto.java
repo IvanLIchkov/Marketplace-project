@@ -1,5 +1,6 @@
 package bg.softuni.marketplace.model.dto;
 
+import bg.softuni.marketplace.model.domain.FileEntity;
 import bg.softuni.marketplace.model.enums.CategoriesEnum;
 
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ public class ItemDetailsDto {
 
     private long id;
 
-    private String pictureUrl;
+    private Long imgId;
 
     private String name;
 
@@ -24,8 +25,10 @@ public class ItemDetailsDto {
 
     private boolean isOwner;
 
+    private boolean ownerForBuyButton;
+
     public ItemDetailsDto(long id,
-                          String pictureUrl,
+                          Long imgId,
                           String name,
                           BigDecimal price,
                           String description,
@@ -33,7 +36,7 @@ public class ItemDetailsDto {
                           Long sellerId,
                           String sellerUsername) {
         this.id = id;
-        this.pictureUrl = pictureUrl;
+        this.imgId = imgId;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -51,12 +54,12 @@ public class ItemDetailsDto {
         return this;
     }
 
-    public String getPictureUrl() {
-        return pictureUrl;
+    public Long getImgId() {
+        return imgId;
     }
 
-    public ItemDetailsDto setPictureUrl(String pictureUrl) {
-        this.pictureUrl = pictureUrl;
+    public ItemDetailsDto setImgId(Long imgId) {
+        this.imgId = imgId;
         return this;
     }
 
@@ -120,6 +123,15 @@ public class ItemDetailsDto {
 
     public ItemDetailsDto setOwner(boolean owner) {
         isOwner = owner;
+        return this;
+    }
+
+    public boolean isOwnerForBuyButton() {
+        return ownerForBuyButton;
+    }
+
+    public ItemDetailsDto setOwnerForBuyButton(boolean ownerForBuyButton) {
+        this.ownerForBuyButton = ownerForBuyButton;
         return this;
     }
 }

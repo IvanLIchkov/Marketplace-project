@@ -16,9 +16,7 @@ public class AddItemDto {
     private String name;
 
     @NotNull(message = "Picture must not be empty!")
-    private MultipartFile picture;
-
-    private String pictureName;
+    private MultipartFile img;
 
     @NotNull(message = "Required field!")
     @Positive(message = "Price must be positive number!")
@@ -40,21 +38,12 @@ public class AddItemDto {
         return this;
     }
 
-    public MultipartFile getPicture() {
-        return picture;
+    public MultipartFile getImg() {
+        return img;
     }
 
-    public AddItemDto setPicture(MultipartFile picture) {
-        this.picture = picture;
-        return this;
-    }
-
-    public String getPictureName() {
-        return pictureName;
-    }
-
-    public AddItemDto setPictureName(String pictureName) {
-        this.pictureName = pictureName;
+    public AddItemDto setImg(MultipartFile img) {
+        this.img = img;
         return this;
     }
 

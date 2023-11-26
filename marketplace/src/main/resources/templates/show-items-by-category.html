@@ -13,30 +13,20 @@
 <nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
 </nav>
 
-    <h1 class="text-center my-5" th:if="${items.size()>0}" th:text="|${#strings.capitalize(items.get(0).category.type.name())} category!|">Test</h1>
+    <h1 class="text-center my-5" th:if="${items.size()>0}" th:text="|${#strings.capitalize(items.get(0).categoryName.toLowerCase())} category!|">Test</h1>
     <h1 class="text-center my-5" th:if="${items.size()==0}">No items from this category!</h1>
-<div>
-    <div class="container mt-100">
-        <div class="row">
-            <div th:each="i : ${items}" class="col-md-4 col-sm-6">
-                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
-<!--                    <div class="inner">-->
-<!--                        <div class="main-img"><img th:src="'/images/usersPictures/' +${i.pictureUrl}" alt="Category"></div>-->
-<!--                    </div>-->
-                    <div class="card-img-top-wrapper">
-                        <img class="card-img-top" th:src="'/images/usersPictures/' +${i.pictureUrl}" alt="Category image">
-                    </div>
-                </a>
-                    <div class="card-body text-center">
-                        <h4 class="card-title" th:text="${i.name}">Laptops</h4>
-                        <p class="text-muted" th:text="|Price is: ${i.price}|">Starting from $499</p>
-                        <a class="btn btn-outline-primary btn-sm" th:href="|/items/details/${i.id}|" data-abc="true">View Products</a>
-
-                    </div>
-                </div>
+<div class="wrapper">
+    <ul role="list">
+        <li th:each="i : ${items}" th:object="${i}">
+            <img th:src="@{/items/download/{imgId}(imgId = ${i.imgId})}" class=" border p-3" alt="picture of item">
+            <div>
+                <h3 th:text="${i.name}">Digital Currency</h3>
+                <p class="text-muted" th:text="|Price is: ${i.price}|">Starting from $499</p>
+                <a class="btn btn-outline-primary btn-sm" th:href="@{/items/details/{id}(id=${i.id})}" data-abc="true">View Products</a>
             </div>
-    </div>
-</div>
+
+        </li>
+    </ul>
 </div>
 </body>
 </html>

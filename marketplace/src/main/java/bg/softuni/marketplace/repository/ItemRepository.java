@@ -15,12 +15,14 @@ import java.util.Optional;
 @Repository
 public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
 
-    List<ItemEntity> findAllByCategory(CategoryEntity category);
+    List<ItemEntity> findAllByCategoryAndBuyerIsNull(CategoryEntity category);
 
-    @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.pictureUrl, i.name, i.price, i.description, c.type, u.id, u.username) from ItemEntity i " +
+    List<ItemEntity> findAllByBuyerIsNull();
+
+    @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.image.id, i.name, i.price, i.description, c.type, u.id, u.username) from ItemEntity i " +
             "join CategoryEntity c on i.category.id = c.id " +
             "join UserEntity u on i.seller.id = u.id " +
-            "where i.id = :id")
+            "where i.id = :id and i.buyer.id = null")
     Optional<ItemDetailsDto> itemDetails(@Param("id") Long id);
 
 }

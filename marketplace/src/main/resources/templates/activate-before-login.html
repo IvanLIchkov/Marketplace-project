@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Activate before login</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
     <link rel="stylesheet" th:href="@{/css/activate-before-login.css}">
 </head>
+
 <body>
-<h1>You need to activate your account by activation link that we send to your email before trying to login!</h1>
+
+<nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+</nav>
+
+<div class="container">
+    <h1 class="text-center text-white text-dark">First you need to verify your account! We send verification link on your email!</h1>
+</div>
+
+<div>
+    <footer></footer>
+</div>
 </body>
 </html>

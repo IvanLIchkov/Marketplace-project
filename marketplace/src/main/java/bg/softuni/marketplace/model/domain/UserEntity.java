@@ -30,11 +30,10 @@ public class UserEntity extends BaseEntity{
     @ManyToMany(fetch = FetchType.EAGER)
     private List<RoleEntity> roleEntities;
 
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "seller")
     private Set<ItemEntity> itemsForSale;
 
-//    @JoinColumn(name = "bought_items_id")
-    @OneToMany
+    @OneToMany(mappedBy = "buyer")
     private Set<ItemEntity> boughtItemEntities;
 
     @Column
@@ -42,6 +41,14 @@ public class UserEntity extends BaseEntity{
 
     @Column
     private boolean confirmedEmail;
+
+    public void sellItem(ItemEntity itemEntity){
+        this.itemsForSale.remove(itemEntity);
+    }
+
+    public void buyItem(ItemEntity itemEntity){
+        this.boughtItemEntities.add(itemEntity);
+    }
 
     public String getUsername() {
         return username;

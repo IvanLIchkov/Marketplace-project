@@ -2,38 +2,41 @@ package bg.softuni.marketplace.web;
 
 import bg.softuni.marketplace.model.domain.CategoryEntity;
 import bg.softuni.marketplace.model.domain.ItemEntity;
-import bg.softuni.marketplace.model.dto.AddItemDto;
-import bg.softuni.marketplace.model.dto.ItemDetailsDto;
-import bg.softuni.marketplace.model.dto.ShowItemDto;
+import bg.softuni.marketplace.model.dto.*;
 import bg.softuni.marketplace.service.CategoryService;
+import bg.softuni.marketplace.service.FileService;
 import bg.softuni.marketplace.service.ItemService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
+import org.springframework.util.MimeTypeUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 @RequestMapping("/items")
 public class ItemController {
 
     private final CategoryService categoryService;
-    private final ItemService itemService;
+   private final ItemService itemService;
+   private final FileService fileService;
 
-    public ItemController(CategoryService categoryService, ItemService itemService) {
+    @Autowired
+    public ItemController(CategoryService categoryService, ItemService itemService, FileService fileService) {
         this.categoryService = categoryService;
         this.itemService = itemService;
+        this.fileService = fileService;
     }
 
     @GetMapping("/add")
@@ -55,23 +58,13 @@ public class ItemController {
     public String add(@Valid AddItemDto addItemDto,
                       BindingResult bindingResult,
                       RedirectAttributes redirectAttributes,
-                      @AuthenticationPrincipal UserDetails seller,
-                      @RequestParam("picture") MultipartFile multipartFile) throws IOException {
+                      @AuthenticationPrincipal UserDetails seller) throws IOException {
         if(bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addItemDto", bindingResult);
             redirectAttributes.addFlashAttribute("addItemDto", addItemDto);
             return "redirect:/items/add";
         }
-        String fileName ="";
-        if(!multipartFile.isEmpty()){
-            fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
-            addItemDto.setPictureName(fileName);
-        }else {
-            if(addItemDto.getPicture().isEmpty()){
-                addItemDto.setPicture(null);
-            }
-        }
-        this.itemService.addItem(addItemDto, seller , fileName, multipartFile);
+        this.itemService.addItem(addItemDto, seller);
         return "redirect:/";
     }
     @GetMapping("/all")
@@ -85,7 +78,7 @@ public class ItemController {
     @GetMapping("/all/{id}")
     public ModelAndView itemsSpecificCategory(@PathVariable String id, ModelAndView modelAndView){
 
-        List<ItemEntity> itemEntities = itemService.allItemsByType(Long.valueOf(id));
+        List<ShowItemWithCategoryDto> itemEntities = itemService.allItemsByType(Long.valueOf(id));
         modelAndView.setViewName("show-items-by-category");
         modelAndView.addObject("items", itemEntities);
         return modelAndView;
@@ -99,12 +92,30 @@ public class ItemController {
         modelAndView.addObject("itemDetails", itemDetailsDto);
         return modelAndView;
     }
+    @GetMapping("/download/{imgId}")
+    public HttpEntity<byte[]> downloadImg(@PathVariable Long imgId){
+        FileDownloadDto downloadedImg = this.fileService.download(imgId);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType(MimeTypeUtils.parseMimeType(downloadedImg.getContentType())));
+        headers.set(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename="+downloadedImg.getName());
+        headers.setContentLength(downloadedImg.getDocument().length);
+
+        return new HttpEntity<>(downloadedImg.getDocument(), headers);
+    }
 
     @PreAuthorize("@itemServiceImpl.isOwner(#id, #principal)")
     @DeleteMapping("/delete/{id}")
     public String deleteItem(@PathVariable Long id,
                              @AuthenticationPrincipal UserDetails principal){
         this.itemService.deleteOffer(id);
+        return "redirect:/";
+    }
+
+    @PostMapping("/buy/{itemId}")
+    public String buyItem(@PathVariable Long itemId,
+                          @AuthenticationPrincipal UserDetails principal){
+       this.itemService.buyItem(itemId, principal.getUsername());
         return "redirect:/";
     }
 }

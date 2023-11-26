@@ -2,8 +2,7 @@ package bg.softuni.marketplace.model.dto;
 
 import java.math.BigDecimal;
 
-public class ShowItemDto {
-
+public class ShowItemWithCategoryDto {
     private Long id;
 
     private Long imgId;
@@ -12,11 +11,13 @@ public class ShowItemDto {
 
     private BigDecimal price;
 
+   private String categoryName;
+
     public Long getId() {
         return id;
     }
 
-    public ShowItemDto setId(Long id) {
+    public ShowItemWithCategoryDto setId(Long id) {
         this.id = id;
         return this;
     }
@@ -25,7 +26,7 @@ public class ShowItemDto {
         return imgId;
     }
 
-    public ShowItemDto setImgId(Long imgId) {
+    public ShowItemWithCategoryDto setImgId(Long imgId) {
         this.imgId = imgId;
         return this;
     }
@@ -34,7 +35,7 @@ public class ShowItemDto {
         return name;
     }
 
-    public ShowItemDto setName(String name) {
+    public ShowItemWithCategoryDto setName(String name) {
         this.name = name;
         return this;
     }
@@ -43,8 +44,17 @@ public class ShowItemDto {
         return price;
     }
 
-    public ShowItemDto setPrice(BigDecimal price) {
+    public ShowItemWithCategoryDto setPrice(BigDecimal price) {
         this.price = price;
+        return this;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public ShowItemWithCategoryDto setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
         return this;
     }
 }
