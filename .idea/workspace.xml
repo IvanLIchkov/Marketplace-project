@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Spring security config refactoring.">
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-403.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/403.html" afterDir="false" />
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some error handles.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-404.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-404.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-500.png" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/error-images/error-500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/activate-before-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/activate-before-login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/activate-before-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/activate-before-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +182,7 @@
       <workItem from="1700511780838" duration="2237000" />
       <workItem from="1700514028612" duration="2852000" />
       <workItem from="1700556878453" duration="22179000" />
-      <workItem from="1700985158402" duration="7801000" />
+      <workItem from="1700985158402" duration="12246000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -243,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700993696441</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Some error handles.">
+      <option name="closed" value="true" />
+      <created>1700996686327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700996686327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +273,8 @@
     <MESSAGE value="Error 404 and error 500 default page." />
     <MESSAGE value="Admin page permission bug found and resolved." />
     <MESSAGE value="Spring security config refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring security config refactoring." />
+    <MESSAGE value="Some error handles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some error handles." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -309,10 +315,24 @@
           </properties>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java</url>
+          <line>57</line>
+          <properties class="bg.softuni.marketplace.service.impl.UserServiceImpl" method="registerUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java</url>
           <line>14</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

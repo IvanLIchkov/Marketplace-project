@@ -1055,8 +1055,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="308" parent="1" name="marketplace_app">
-      <IntrospectionTimestamp>2023-11-21.14:45:26</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-21.10:45:26</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-27.01:40:32</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-26.21:40:32</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="309" parent="1" name="mysql.infoschema">
@@ -1176,7 +1176,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="334" parent="315" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1205,30 +1205,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="340" parent="315" name="buyer_id">
+    <column id="340" parent="315" name="category_id">
       <DasType>bigint|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="341" parent="315" name="category_id">
+    <column id="341" parent="315" name="seller_id">
       <DasType>bigint|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="342" parent="315" name="seller_id">
+    <column id="342" parent="315" name="buyer_id">
       <DasType>bigint|0s</DasType>
       <Position>9</Position>
     </column>
-    <foreign-key id="343" parent="315" name="FKitoq088n4b4sdl1ibkv6uj61v">
-      <ColNames>buyer_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="344" parent="315" name="FKjcdcde7htb3tyjgouo4g9xbmr">
+    <foreign-key id="343" parent="315" name="FKjcdcde7htb3tyjgouo4g9xbmr">
       <ColNames>category_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>categories</RefTableName>
     </foreign-key>
-    <foreign-key id="345" parent="315" name="FKsm9ro5ntn6yaav2m7ydato0fc">
+    <foreign-key id="344" parent="315" name="FKsm9ro5ntn6yaav2m7ydato0fc">
       <ColNames>seller_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="345" parent="315" name="FKitoq088n4b4sdl1ibkv6uj61v">
+      <ColNames>buyer_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
@@ -1237,16 +1237,16 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="347" parent="315" name="FKitoq088n4b4sdl1ibkv6uj61v">
-      <ColNames>buyer_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="348" parent="315" name="FKjcdcde7htb3tyjgouo4g9xbmr">
+    <index id="347" parent="315" name="FKjcdcde7htb3tyjgouo4g9xbmr">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="349" parent="315" name="FKsm9ro5ntn6yaav2m7ydato0fc">
+    <index id="348" parent="315" name="FKsm9ro5ntn6yaav2m7ydato0fc">
       <ColNames>seller_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="349" parent="315" name="FKitoq088n4b4sdl1ibkv6uj61v">
+      <ColNames>buyer_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="350" parent="315" name="PRIMARY">

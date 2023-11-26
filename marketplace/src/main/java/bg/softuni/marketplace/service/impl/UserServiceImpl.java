@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
                 .setEmail(userRegisterDto.getEmail())
                 .setRoleEntities(new ArrayList<>(this.roleService.findUserRoleEntity()))
                 .setPassword(passwordEncoder.encode(userRegisterDto.getPassword()))
-                .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()))
+//                .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()))
                 .setIpAddress(userRegisterDto.getIpAddress())
                         .setConfirmedEmail(false);
 

@@ -44,7 +44,7 @@ public class SecurityConfiguration {
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 requestMatchers("/users/login**","/users/login-error**", "/").permitAll().
                 requestMatchers( "/users/register", "/user/activate/{code}").anonymous().
-                requestMatchers("/admin", "/admin/manage").hasRole(RolesEnum.ADMIN.name()).
+                requestMatchers("/admin/**").hasRole(RolesEnum.ADMIN.name()).
                         anyRequest().authenticated())
                 .formLogin(
                         formLogin ->{

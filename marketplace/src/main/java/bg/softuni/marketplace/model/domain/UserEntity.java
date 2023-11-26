@@ -33,7 +33,7 @@ public class UserEntity extends BaseEntity{
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ItemEntity> itemsForSale;
 
-//    @JoinColumn(name = "bought_items_id")
+    @JoinColumn(name = "buyer_id")
     @OneToMany
     private Set<ItemEntity> boughtItemEntities;
 
