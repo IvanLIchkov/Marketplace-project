@@ -31,7 +31,6 @@ class RegisterControllerTestIT {
 
     @Value("${mail.host}")
     private String host;
-
     @Value("${mail.username}")
     private String username;
 
@@ -79,5 +78,21 @@ class RegisterControllerTestIT {
         Assertions.assertTrue(registrationMessage.getContent().toString().contains("testUsername"));
         Assertions.assertEquals(1, registrationMessage.getAllRecipients().length);
         Assertions.assertEquals("test@mail.com", registrationMessage.getAllRecipients()[0].toString());
+    }
+
+    @Test
+    void testRegisterNewUserWithBadCredentials() throws Exception {
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/users/register")
+                                .param("username", "")
+                                .param("email", "")
+                                .param("firstName","")
+                                .param("lastName", "")
+                                .param("password", "testPassword")
+                                .param("confirmPassword", "testPassword")
+                                .param("townName", "testTownName")
+                                .with(csrf())
+                ).andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/users/register"));
     }
 }

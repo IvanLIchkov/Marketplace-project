@@ -30,14 +30,19 @@ public class AdminController {
     }
 
     @GetMapping("/ban/{userId}")
-    public String banUser(@PathVariable String userId){
-        this.blackListService.banUser(userService.findById(Long.valueOf(userId)));
+    public String banUser(@PathVariable Long userId){
+        this.blackListService.banUser(userService.findById(userId));
+        return "redirect:/admin/manage";
+    }
+    @GetMapping("/unban/{userId}")
+    public String unbanUser(@PathVariable Long userId){
+        this.blackListService.unbanUser(userId);
         return "redirect:/admin/manage";
     }
 
     @GetMapping("/promote/{userId}")
-    public String promoteUserToAdmin(@PathVariable String userId){
-        this.userService.promoteUser(Long.valueOf(userId));
+    public String promoteUserToAdmin(@PathVariable Long userId){
+        this.userService.promoteUser(userId);
         return "redirect:/admin/manage";
     }
 

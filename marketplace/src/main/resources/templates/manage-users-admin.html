@@ -46,17 +46,16 @@
                             </td>
                             <td>
                                 <span class="text-muted" th:text="${u.email}">daniel@website.com</span><br>
-                                <span class="text-muted">999 - 444 - 555</span>
                             </td>
                             <td>
                                 <span class="text-muted" th:text="${u.town}">Town</span><br>
-                                <span class="text-muted">10: 55 AM</span>
                             </td>
                             <td class="role_manage" th:each="r : ${u.getRoleEntities()}">
                                 <span class="text-muted" th:text="${r.name}">User</span><br>
                             </td>
                             <td>
-                                <a  th:href="|/admin/ban/${u.id}|" th:if="${u.getRoleEntities().size() == 1}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-user-xmark"></i></a>
+                                <a  th:href="|/admin/unban/${u.id}|" th:if="${u.isBanned()}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-unlock"></i></a>
+                                <a  th:href="|/admin/ban/${u.id}|"  th:if="${u.getRoleEntities().size() == 1} and ${!u.isBanned()}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-user-xmark"></i></a>
                                 <a th:href="|/admin/promote/${u.id}|" th:if="${u.getRoleEntities().size() == 1}"  class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-person-arrow-up-from-line"></i> </a>
                                 <a  th:href="|/user/details/${u.id}|" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa-solid fa-eye"></i> </a>
                             </td>

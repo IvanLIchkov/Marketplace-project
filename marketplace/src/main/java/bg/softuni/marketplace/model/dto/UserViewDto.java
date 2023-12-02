@@ -20,6 +20,8 @@ public class UserViewDto {
 
     private Set<RoleEntity> roleEntities;
 
+    private boolean isBanned;
+
 
     public Long getId() {
         return id;
@@ -82,6 +84,15 @@ public class UserViewDto {
 
     public UserViewDto setRoleEntities(Set<RoleEntity> roleEntities) {
         this.roleEntities = roleEntities;
+        return this;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
+    }
+
+    public UserViewDto setBanned(boolean banned) {
+        isBanned = banned;
         return this;
     }
 }

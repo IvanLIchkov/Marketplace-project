@@ -1,29 +1,24 @@
-
 spring:
-
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     defer-datasource-initialization: true
-
   sql:
-      init:
-        mode: never
-
+    init:
+      mode: never
   mvc:
     hidden-method:
       filter:
         enabled: true
 
-#default.admin.pass: ${DEFAULT_ADMIN_PASS:topsecret}
 logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.orm.jdbc.bind: TRACE
 
 mail:
-  marketplace: "marketplace@mail.com"
+  marketplace: "mobilele@example.com"
   host: localhost
   port: 3333
-  username: test
-  password: testPass
+  username: test@example.com
+  password: test

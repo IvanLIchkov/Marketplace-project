@@ -17,7 +17,7 @@
 <!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
         <div class="nav justify-content-end" id="navbarSupportedContent">
             <ul class="nav-content d-flex justify-content-between align-items-center">
-                <li sec:authorize="isAuthenticated()" class="nav-item"><a class="text-white nav-link active" aria-current="page" th:href="@{/user/show}">Show all my items</a></li>
+                <li sec:authorize="isAuthenticated()" class="nav-item"><a class="text-white nav-link active" th:href="@{/user/show}">Show all my items</a></li>
                 <li sec:authorize="isAnonymous()" class="nav-item"><a class="text-white nav-link" th:href="@{/users/login}">Login</a></li>
                 <li sec:authorize="isAnonymous()" class="nav-item"><a class="text-white nav-link" th:href="@{/users/register}">Register</a></li>
                 <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="text-white nav-link" th:href="@{/admin/manage}">Admin page</a></li>

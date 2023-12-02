@@ -18,18 +18,19 @@ public class UserTestDataUtil {
     @Autowired
     private RoleRepository roleRepository;
 
-    public UserEntity createTestUser(){
-        return createUser(List.of(RolesEnum.USER));
+    public UserEntity createTestUser(String username){
+        return createUser(username ,List.of(RolesEnum.USER));
     }
 
-    public UserEntity createTestAdmin(){
-        return createUser(List.of(RolesEnum.ADMIN));
+    public UserEntity createTestAdmin(String username){
+        return createUser(username ,List.of(RolesEnum.ADMIN));
     }
 
-    private UserEntity createUser(List<RolesEnum> roles){
+    private UserEntity createUser(String username, List<RolesEnum> roles){
         var roleEntities = roleRepository.findAllByNameIn(roles);
         UserEntity newUser = new UserEntity()
-                .setUsername("testUser")
+                .setUsername(username)
+                .setPassword("test")
                 .setEmail("test@mail")
                 .setConfirmedEmail(true)
                 .setFirstName("Test user first")

@@ -10,4 +10,8 @@ import java.util.Optional;
 public interface BlackListedRepository extends JpaRepository<BlackListedEntity, Long> {
 
     Optional<BlackListedEntity> findByIpAddress(String ipAddress);
+
+    Optional<BlackListedEntity> findByUserId(Long id);
+
+   void deleteByUserId(long userId);
 }

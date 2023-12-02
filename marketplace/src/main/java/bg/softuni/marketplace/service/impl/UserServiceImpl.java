@@ -5,6 +5,7 @@ import bg.softuni.marketplace.model.dto.UserRegisterDto;
 import bg.softuni.marketplace.model.dto.UserViewDto;
 import bg.softuni.marketplace.model.enums.RolesEnum;
 import bg.softuni.marketplace.model.events.UserRegisteredEvent;
+import bg.softuni.marketplace.repository.BlackListedRepository;
 import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.RoleService;
 import bg.softuni.marketplace.service.TownService;
@@ -34,8 +35,9 @@ public class UserServiceImpl implements UserService {
     private final UserDetailsService userDetailsService;
     private final ModelMapper mapper;
     private final ApplicationEventPublisher applicationEventPublisher;
+    private final BlackListedRepository blackListedRepository;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleService roleService, TownService townService, UserDetailsService userDetailsService, ModelMapper mapper, ApplicationEventPublisher applicationEventPublisher) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleService roleService, TownService townService, UserDetailsService userDetailsService, ModelMapper mapper, ApplicationEventPublisher applicationEventPublisher, BlackListedRepository blackListedRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.roleService = roleService;
@@ -43,6 +45,7 @@ public class UserServiceImpl implements UserService {
         this.userDetailsService = userDetailsService;
         this.mapper = mapper;
         this.applicationEventPublisher = applicationEventPublisher;
+        this.blackListedRepository = blackListedRepository;
     }
 
     @Override
@@ -82,7 +85,8 @@ public class UserServiceImpl implements UserService {
     public List<UserViewDto> adminPageViewUsers() {
         List<UserViewDto> collect = this.userRepository.findAll()
                 .stream()
-                .map(u -> this.mapper.map(u, UserViewDto.class))
+                .map(u -> this.mapper.map(u, UserViewDto.class)
+                        .setBanned(blackListedRepository.findByUserId(u.getId()).isPresent()))
                 .toList();
         return collect;
     }
