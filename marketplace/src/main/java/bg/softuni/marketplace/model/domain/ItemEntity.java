@@ -18,7 +18,7 @@ public class ItemEntity extends BaseEntity{
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false)
     private String description;
 
     @Column(nullable = false)

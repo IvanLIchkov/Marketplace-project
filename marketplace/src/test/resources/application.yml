@@ -22,3 +22,10 @@ mail:
   port: 3333
   username: test@example.com
   password: test
+
+#  jdbc:
+#    hsqldb:
+#      mem:
+#        testdb;
+#  sql.
+#    syntax_mys=true.

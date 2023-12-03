@@ -51,7 +51,8 @@ public class ApplicationUserDetailsServiceTest {
 
     @Test
     void testUserNotFound(){
-        Assertions.assertThrows(UsernameNotFoundException.class, () ->serviceToTest.loadUserByUsername("pesho@test.com"));
+        Assertions.assertThrows(UsernameNotFoundException.class,
+                () ->serviceToTest.loadUserByUsername("pesho@test.com"));
     }
 
     @Test

@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some changes." />
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some updates.">
+      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/AdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/IndexControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/LoginControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/AppUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/AppUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/service/impl/ApplicationUserDetailsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/service/impl/ApplicationUserDetailsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/testutils/UserTestDataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/testutils/UserTestDataUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/ItemControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/ItemControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/test/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/marketplace">
@@ -36,9 +55,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -47,6 +68,11 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="GradleRunConfiguration" name="ItemServiceImplTest.allItemsWhereBuyerIsNull" />
+    </enabled-run-configurations>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -57,38 +83,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/SoftUni Repos/Spring-Advanced/fileupload-main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14941406&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;84e8c39452eb127d6df93567d0c7291a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/SoftUni Repos/Spring-Fundamentals",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.14941406",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "spring.configuration.checksum": "84e8c39452eb127d6df93567d0c7291a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;redshift&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redshift",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="bg.softuni.marketplace.service.impl" />
@@ -97,9 +126,16 @@
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images\error-images" />
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="bg.softuni.marketplace.web" />
+      <recent name="bg.softuni.marketplace.service.impl" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MarketplaceApplication">
-    <configuration name="RegisterControllerTestIT.testRegisterNewUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ItemControllerTest">
+    <configuration name="ItemControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/marketplace" />
@@ -112,7 +148,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;bg.softuni.marketplace.web.RegisterControllerTestIT.testRegisterNewUser&quot;" />
+            <option value="&quot;bg.softuni.marketplace.web.ItemControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -123,24 +159,98 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="marketplace" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ItemControllerTest.addProductFail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/marketplace" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
-          <list />
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;bg.softuni.marketplace.web.ItemControllerTest.addProductFail&quot;" />
+          </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ItemControllerTest.addProductSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/marketplace" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;bg.softuni.marketplace.web.ItemControllerTest.addProductSuccess&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ItemControllerTest.addProductSuccessFail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/marketplace" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;bg.softuni.marketplace.web.ItemControllerTest.addProductSuccessFail&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'marketplace.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/marketplace" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="MarketplaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -151,10 +261,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.ItemControllerTest" />
+      <item itemvalue="Gradle.ItemControllerTest.addProductFail" />
+      <item itemvalue="Gradle.ItemControllerTest.addProductSuccess" />
+      <item itemvalue="Gradle.ItemControllerTest.addProductSuccessFail" />
+      <item itemvalue="Gradle.Tests in 'marketplace.test'" />
+      <item itemvalue="Spring Boot.MarketplaceApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RegisterControllerTestIT.testRegisterNewUser" />
-        <item itemvalue="Gradle.marketplace" />
+        <item itemvalue="Gradle.ItemControllerTest" />
+        <item itemvalue="Gradle.ItemControllerTest.addProductSuccess" />
+        <item itemvalue="Gradle.ItemControllerTest.addProductFail" />
+        <item itemvalue="Gradle.ItemControllerTest.addProductSuccessFail" />
+        <item itemvalue="Gradle.Tests in 'marketplace.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +300,7 @@
       <workItem from="1701034854591" duration="26000" />
       <workItem from="1701073169646" duration="6257000" />
       <workItem from="1701166822402" duration="8573000" />
+      <workItem from="1701507425630" duration="39824000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -260,7 +382,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701204322350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Index page refactor.">
+      <option name="closed" value="true" />
+      <created>1701507731860</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701507731861</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Some updates.">
+      <option name="closed" value="true" />
+      <created>1701530137728</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701530137728</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,20 +425,13 @@
     <MESSAGE value="Spring security config refactoring." />
     <MESSAGE value="Some error handles." />
     <MESSAGE value="Some changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes." />
+    <MESSAGE value="Index page refactor." />
+    <MESSAGE value="Some updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some updates." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java</url>
-          <line>57</line>
-          <properties class="bg.softuni.marketplace.service.impl.UserServiceImpl" method="registerUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/FileServiceImpl.java</url>
           <line>22</line>
@@ -319,30 +450,74 @@
           </properties>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java</url>
+          <line>89</line>
+          <properties class="bg.softuni.marketplace.service.impl.ItemServiceImpl" method="allItems">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/AdminController.java</url>
+          <line>32</line>
+          <properties class="bg.softuni.marketplace.web.AdminController" method="banUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/AdminController.java</url>
+          <line>49</line>
+          <properties class="bg.softuni.marketplace.web.AdminController" method="getUserDetailsView">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
+          <line>87</line>
+          <properties class="bg.softuni.marketplace.web.ItemController" method="itemDetails">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
+          <line>115</line>
+          <properties class="bg.softuni.marketplace.web.ItemController" method="buyItem">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
+          <line>70</line>
+          <properties class="bg.softuni.marketplace.web.ItemController" method="showAllItems">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java</url>
           <line>11</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/MarketplaceApplicationTests.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/BlackListService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -356,5 +531,31 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Marketplace_project$MarketplaceApplicationTests.ic" NAME="MarketplaceApplicationTests Coverage Results" MODIFIED="1701596764576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$MarketplaceApplicationTests_contextLoads.ic" NAME="MarketplaceApplicationTests.contextLoads Coverage Results" MODIFIED="1701596829963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$AdminControllerTest_promoteToAdmin.ic" NAME="AdminControllerTest.promoteToAdmin Coverage Results" MODIFIED="1701594565919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$RegisterControllerTestIT_testRegisterNewUserWithBadCredentials.ic" NAME="RegisterControllerTestIT.testRegisterNewUserWithBadCredentials Coverage Results" MODIFIED="1701522509194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$AdminControllerTest_banUserTest.ic" NAME="AdminControllerTest.banUserTest Coverage Results" MODIFIED="1701594601375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ApplicationUserDetailsServiceTest_testUserFoundException.ic" NAME="ApplicationUserDetailsServiceTest.testUserFoundException Coverage Results" MODIFIED="1701614921486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$AdminControllerTest_testAdminManagePage.ic" NAME="AdminControllerTest.testAdminManagePage Coverage Results" MODIFIED="1701593774538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ApplicationUserDetailsServiceTest.ic" NAME="ApplicationUserDetailsServiceTest Coverage Results" MODIFIED="1701530887017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest.ic" NAME="ItemControllerTest Coverage Results" MODIFIED="1701616869409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_itemDetails.ic" NAME="ItemControllerTest.itemDetails Coverage Results" MODIFIED="1701614511173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemServiceImplTest_allItemsWhereBuyerIsNull.ic" NAME="ItemServiceImplTest.allItemsWhereBuyerIsNull Coverage Results" MODIFIED="1701588339176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$AdminControllerTest_unbanUser.ic" NAME="AdminControllerTest.unbanUser Coverage Results" MODIFIED="1701596188501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_testAnonymousDeletionFails.ic" NAME="ItemControllerTest.testAnonymousDeletionFails Coverage Results" MODIFIED="1701616775866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_addProductSuccess.ic" NAME="ItemControllerTest.addProductSuccess Coverage Results" MODIFIED="1701633349639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$RegisterControllerTestIT.ic" NAME="RegisterControllerTestIT Coverage Results" MODIFIED="1701596792801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$IndexControllerTest_testIndexPageWithoutLoggedUser.ic" NAME="IndexControllerTest.testIndexPageWithoutLoggedUser Coverage Results" MODIFIED="1701599100451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_buyItemTestSuccess.ic" NAME="ItemControllerTest.buyItemTestSuccess Coverage Results" MODIFIED="1701616022116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_allItems.ic" NAME="ItemControllerTest.allItems Coverage Results" MODIFIED="1701616624732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_testNonAdminUserOwnedOffer.ic" NAME="ItemControllerTest.testNonAdminUserOwnedOffer Coverage Results" MODIFIED="1701616791263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$LoginControllerTest.ic" NAME="LoginControllerTest Coverage Results" MODIFIED="1701591896458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$AdminControllerTest_getUserDetailsViewTest.ic" NAME="AdminControllerTest.getUserDetailsViewTest Coverage Results" MODIFIED="1701596666163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$IndexControllerTest_testIndexPageWithLoggedUser.ic" NAME="IndexControllerTest.testIndexPageWithLoggedUser Coverage Results" MODIFIED="1701616671127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$Tests_in__marketplace_test_.ic" NAME="Tests in 'marketplace.test' Coverage Results" MODIFIED="1701632834992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Marketplace_project$ItemControllerTest_addProductSuccessFail.ic" NAME="ItemControllerTest.addProductSuccessFail Coverage Results" MODIFIED="1701633883401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -26,7 +26,8 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(@AuthenticationPrincipal AppUserDetails appUserDetails, Model model){
+    public String index(@AuthenticationPrincipal AppUserDetails appUserDetails,
+                        Model model){
         model.addAttribute("isLogged", appUserDetails != null);
         if(appUserDetails != null){
             model.addAttribute("username", appUserDetails.getUsername());

@@ -35,7 +35,8 @@ public class UserTestDataUtil {
                 .setConfirmedEmail(true)
                 .setFirstName("Test user first")
                 .setLastName("Test user last")
-                .setRoleEntities(roleEntities);
+                .setRoleEntities(roleEntities)
+                .setIpAddress("0.0.0.1");
 
         return userRepository.save(newUser);
     }
