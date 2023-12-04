@@ -76,16 +76,16 @@ public class ItemController {
     }
 
     @GetMapping("/all/{id}")
-    public ModelAndView itemsSpecificCategory(@PathVariable String id, ModelAndView modelAndView){
+    public ModelAndView itemsSpecificCategory(@PathVariable Long id, ModelAndView modelAndView){
 
-        List<ShowItemWithCategoryDto> itemEntities = itemService.allItemsByType(Long.valueOf(id));
+        List<ShowItemWithCategoryDto> itemEntities = itemService.allItemsByType(id);
         modelAndView.setViewName("show-items-by-category");
         modelAndView.addObject("items", itemEntities);
         return modelAndView;
     }
 
     @GetMapping("/details/{id}")
-    public ModelAndView itemDetails(@PathVariable String id, ModelAndView modelAndView,
+    public ModelAndView itemDetails(@PathVariable Long id, ModelAndView modelAndView,
                                     @AuthenticationPrincipal UserDetails viewer){
         ItemDetailsDto itemDetailsDto = this.itemService.itemDetailsById(id, viewer);
         modelAndView.setViewName("item-details");

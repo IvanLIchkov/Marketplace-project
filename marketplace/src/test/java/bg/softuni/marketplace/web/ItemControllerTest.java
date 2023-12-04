@@ -4,6 +4,7 @@ import bg.softuni.marketplace.model.AppUserDetails;
 import bg.softuni.marketplace.model.domain.ItemEntity;
 import bg.softuni.marketplace.model.domain.UserEntity;
 import bg.softuni.marketplace.model.dto.AddItemDto;
+import bg.softuni.marketplace.model.dto.ShowItemWithCategoryDto;
 import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.ItemService;
 import bg.softuni.marketplace.service.impl.ApplicationUserDetailsService;
@@ -33,15 +34,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -130,6 +132,39 @@ public class ItemControllerTest {
                         delete("/items/delete/{id}", itemEntity.getId())
                                 .with(csrf())
                 ).andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    @WithMockUser(username = TEST_USER1_USERNAME, roles = "{USER}")
+    void testShowAllItems() throws Exception {
+        mockMvc.perform(
+                get("/items/all")
+        ).andExpect(status().is2xxSuccessful())
+                .andExpect(view().name("show-all-items"));
+    }
+
+    @Test
+    void testShowAllItemsWithoutLoginUserRedirection() throws Exception {
+        mockMvc.perform(
+                        get("/items/all")
+                ).andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    @WithMockUser(username = TEST_USER1_USERNAME, roles = "{USER}")
+    void testShowItemsByCategoryId() throws Exception {
+        ShowItemWithCategoryDto mockShowItemCategory = new ShowItemWithCategoryDto();
+        mockShowItemCategory.setId(1L)
+                        .setName("testName")
+                        .setPrice(BigDecimal.valueOf(100))
+                        .setCategoryName("HOME");
+        List<ShowItemWithCategoryDto> list = new ArrayList<>();
+        list.add(mockShowItemCategory);
+        when(itemService.allItemsByType(1L)).thenReturn(list);
+        mockMvc.perform(
+                        get("/items/all/{id}", 1)
+                ).andExpect(status().is2xxSuccessful())
+                .andExpect(view().name("show-items-by-category"));
     }
 
 

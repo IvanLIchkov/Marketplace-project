@@ -50,9 +50,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public ItemDetailsDto itemDetailsById(String id, UserDetails viewer){
+    public ItemDetailsDto itemDetailsById(Long id, UserDetails viewer){
         ItemDetailsDto itemDetailsDto = this.itemRepository
-                .itemDetails(Long.valueOf(id))
+                .itemDetails(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Item is not found in database!"));
         itemDetailsDto.setOwner(isOwner(itemDetailsDto.getId(), viewer));
         itemDetailsDto.setOwnerForBuyButton(isOwnerForBuyButton(itemDetailsDto.getId(), viewer));

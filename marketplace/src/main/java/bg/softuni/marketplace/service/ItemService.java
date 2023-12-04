@@ -14,7 +14,7 @@ public interface ItemService {
 
     void addItem(AddItemDto addItemDto, UserDetails seller) throws IOException;
 
-    ItemDetailsDto itemDetailsById(String id, UserDetails viewer);
+    ItemDetailsDto itemDetailsById(Long id, UserDetails viewer);
 
     boolean isOwnerForBuyButton(Long itemId, UserDetails viewer);
 
