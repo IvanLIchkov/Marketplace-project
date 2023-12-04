@@ -58,10 +58,12 @@ public class UserActivationServiceImpl implements UserActivationService {
     @Override
     public void cleanUpObsoleteActivationLinks() {
         List<UserActivationLinkEntity> allByCreatedGreaterThanEqual = userActivationLinkRepository
-                .findAllByCreatedGreaterThanEqual(Instant.now().minus(Period.ofDays(1)));
+                .findAllCretedBefor24Hours(Instant.now().minus(Period.ofDays(1)));
         for (UserActivationLinkEntity userActivationLinkEntity : allByCreatedGreaterThanEqual) {
             UserEntity userForRemove = userActivationLinkEntity.getUser();
-            userRepository.delete(userForRemove);
+            if (!userForRemove.isConfirmedEmail()){
+                userRepository.delete(userForRemove);
+            }
             userActivationLinkRepository.delete(userActivationLinkEntity);
         }
 

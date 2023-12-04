@@ -24,9 +24,6 @@ public class UserEntity extends BaseEntity{
     @Column(nullable = false)
     private String password;
 
-    @ManyToOne
-    private TownEntity townEntity;
-
     @ManyToMany(fetch = FetchType.EAGER)
     private List<RoleEntity> roleEntities;
 
@@ -92,15 +89,6 @@ public class UserEntity extends BaseEntity{
 
     public UserEntity setPassword(String password) {
         this.password = password;
-        return this;
-    }
-
-    public TownEntity getTownEntity() {
-        return townEntity;
-    }
-
-    public UserEntity setTownEntity(TownEntity townEntity) {
-        this.townEntity = townEntity;
         return this;
     }
 

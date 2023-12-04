@@ -1,9 +1,6 @@
 package bg.softuni.marketplace.web;
 
-import bg.softuni.marketplace.model.domain.TownEntity;
 import bg.softuni.marketplace.model.dto.UserRegisterDto;
-import bg.softuni.marketplace.model.events.UserRegisteredEvent;
-import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -29,14 +25,12 @@ public class RegisterController {
     private UserService userService;
     private final SecurityContextRepository securityContextRepository;
 
-    private final TownService townService;
 
     private final ApplicationEventPublisher applicationEventPublisher;
 
-    public RegisterController(UserService userService, SecurityContextRepository securityContextRepository, TownService townService, ApplicationEventPublisher applicationEventPublisher) {
+    public RegisterController(UserService userService, SecurityContextRepository securityContextRepository, ApplicationEventPublisher applicationEventPublisher) {
         this.userService = userService;
         this.securityContextRepository = securityContextRepository;
-        this.townService = townService;
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
@@ -45,10 +39,6 @@ public class RegisterController {
         return new UserRegisterDto();
     }
 
-    @ModelAttribute("townList")
-    private List<TownEntity> townList(){
-        return townService.getAllTowns();
-    }
 
     @GetMapping("/register")
     public String register(){

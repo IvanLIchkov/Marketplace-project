@@ -38,8 +38,6 @@ public class UserRegisterDto {
     private String confirmPassword;
 
 
-    private String townName;
-
     private String ipAddress;
 
     public String getUsername() {
@@ -93,15 +91,6 @@ public class UserRegisterDto {
 
     public UserRegisterDto setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
-        return this;
-    }
-
-    public String getTownName() {
-        return townName;
-    }
-
-    public UserRegisterDto setTownName(String townName) {
-        this.townName = townName;
         return this;
     }
 

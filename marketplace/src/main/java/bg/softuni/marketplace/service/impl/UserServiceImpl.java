@@ -8,7 +8,6 @@ import bg.softuni.marketplace.model.events.UserRegisteredEvent;
 import bg.softuni.marketplace.repository.BlackListedRepository;
 import bg.softuni.marketplace.repository.UserRepository;
 import bg.softuni.marketplace.service.RoleService;
-import bg.softuni.marketplace.service.TownService;
 import bg.softuni.marketplace.service.UserService;
 import bg.softuni.marketplace.service.exceptions.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
@@ -31,17 +30,15 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
     private RoleService roleService;
-    private final TownService townService;
     private final UserDetailsService userDetailsService;
     private final ModelMapper mapper;
     private final ApplicationEventPublisher applicationEventPublisher;
     private final BlackListedRepository blackListedRepository;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleService roleService, TownService townService, UserDetailsService userDetailsService, ModelMapper mapper, ApplicationEventPublisher applicationEventPublisher, BlackListedRepository blackListedRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleService roleService, UserDetailsService userDetailsService, ModelMapper mapper, ApplicationEventPublisher applicationEventPublisher, BlackListedRepository blackListedRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.roleService = roleService;
-        this.townService = townService;
         this.userDetailsService = userDetailsService;
         this.mapper = mapper;
         this.applicationEventPublisher = applicationEventPublisher;
@@ -66,7 +63,6 @@ public class UserServiceImpl implements UserService {
                 .setEmail(userRegisterDto.getEmail())
                 .setRoleEntities(new ArrayList<>(this.roleService.findUserRoleEntity()))
                 .setPassword(passwordEncoder.encode(userRegisterDto.getPassword()))
-//                .setTownEntity(townService.findTownByName(userRegisterDto.getTownName()))
                 .setIpAddress(userRegisterDto.getIpAddress())
                         .setConfirmedEmail(false);
 
@@ -93,7 +89,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserViewDto userView(Long id){
-        return this.userRepository.findById(id).map(u -> this.mapper.map(u, UserViewDto.class)).orElseThrow(() -> new ObjectNotFoundException("No such user in database!"));
+        return this.userRepository
+                .findById(id)
+                .map(u -> this.mapper.map(u, UserViewDto.class))
+                .orElseThrow(() -> new ObjectNotFoundException("No such user in database!"));
     }
 
     @Override

@@ -7,7 +7,6 @@
    <title>Registration</title>
    <link rel="stylesheet" href="/css/reset-css.css"/>
    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
-   <link rel="stylesheet" th:href="@{css/styles.css}"/>
    <link rel="stylesheet" th:href="@{/css/main.css}">
    <link rel="stylesheet" th:href="@{/css/register.css}">
 </head>
@@ -15,81 +14,58 @@
 <body>
 <nav th:replace="fragments/navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>
+<h1>Registration Form</h1>
 <main>
-   <form class=" mx-auto mb-5 text-center bg-transparent  p-3 rounded" th:action="@{/users/register}" th:method="POST" th:object="${userRegisterDto}">
-      <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark p-3 w-100">Register</span></h1>
-      <div class="form-group">
-         <div class="label-holder textCol d-flex justify-content-center">
-            <label for="username" class="h4 mb-2 text-dark">Username</label>
+   <div class="left">
+   </div>
+   <div class="custom-file-control right">
+      <form th:action="@{/users/register}" th:method="POST" th:object="${userRegisterDto}">
+         <div>
+            <label for="username" class="">Username</label>
+            <input th:field="*{username}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control" id="username" name="username"/>
+            <small th:errors="*{username}" class="invalid-feedback text-danger">Incorrect username!</small>
          </div>
-         <input th:field="*{username}"
-                th:errorclass="is-invalid"
-                type="text" class="form-control" id="username" name="username"/>
-         <small th:errors="*{username}" class="invalid-feedback text-danger">Incorrect username!</small>
-      </div>
-      <div class="form-group">
-         <div class="label-holder text-white textCol d-flex justify-content-center">
-            <label for="email" class="h4 mb-2 text-dark">Email</label>
+         <div>
+            <label for="email" >Email</label>
+            <input th:field="*{email}"
+                   th:errorclass="is-invalid"
+                   type="email"  id="email" name="email"/>
+            <small th:errors="*{email}" class="invalid-feedback text-danger">Incorrect email!</small>
          </div>
-         <input th:field="*{email}"
-                th:errorclass="is-invalid"
-                type="email" class="form-control" id="email" name="email"/>
-         <small th:errors="*{email}" class="invalid-feedback text-danger">Incorrect email!</small>
-      </div>
-      <div class="form-group">
-         <div class="label-holder text-white textCol d-flex justify-content-center">
-            <label for="firstName" class="h4 mb-2 text-dark">First name</label>
+         <div>
+            <label for="firstName" >First name</label>
+            <input th:field="*{firstName}"
+                   th:errorclass="is-invalid"
+                   type="text"  class="form-control" id="firstName" name="firstName" />
+            <small th:errors="*{firstName}" class="invalid-feedback text-danger">Incorrect name!</small>
          </div>
-         <input th:field="*{firstName}"
-                th:errorclass="is-invalid"
-                type="text"  class="form-control" id="firstName" name="firstName" />
-         <small th:errors="*{firstName}" class="invalid-feedback text-danger">Incorrect name!</small>
-
-      </div>
-      <div class="form-group">
-         <div class="label-holder text-white textCol d-flex justify-content-center">
-            <label for="lastName" class="h4 mb-2 text-dark">Last name</label>
+         <div>
+            <label for="lastName" >Last name</label>
+            <input th:field="*{lastName}"
+                   th:errorclass="is-invalid"
+                   type="text"  class="form-control" id="lastName" name="lastName" />
+            <small th:errors="*{lastName}" class="invalid-feedback text-danger">Incorrect name!</small>
          </div>
-         <input th:field="*{lastName}"
-                th:errorclass="is-invalid"
-                type="text"  class="form-control" id="lastName" name="lastName" />
-         <small th:errors="*{lastName}" class="invalid-feedback text-danger">Incorrect name!</small>
-
-      </div>
-      <div class="form-group">
-         <div class="label-holder text-white textCol d-flex justify-content-center">
-            <label for="password" class="h4 mb-2 text-dark">Password</label>
+         <div>
+            <label for="password" >Password</label>
+            <input
+                    th:field="*{password}"
+                    th:errorclass="is-invalid"
+                    type="password" class="form-control" id="password" name="password" />
+            <small th:errors="*{password}" class="invalid-feedback text-danger">Incorrect pasword!</small>
          </div>
-         <input
-                 th:field="*{password}"
-                 th:errorclass="is-invalid"
-                 type="password" class="form-control" id="password" name="password" />
-         <small th:errors="*{password}" class="invalid-feedback text-danger">Incorrect pasword!</small>
-      </div>
-      <div class="form-group">
-         <div class="label-holder text-white textCol d-flex justify-content-center">
-            <label for="confirmPassword" class="h4 mb-2 text-dark">Confirm Password</label>
+         <div>
+            <label for="confirmPassword" >Confirm Password</label>
+            <input th:field="*{confirmPassword}"
+                   type="password" class="form-control" id="confirmPassword" name="confirmPassword"/>
          </div>
-         <input th:field="*{confirmPassword}"
-                type="password" class="form-control" id="confirmPassword" name="confirmPassword"/>
-
-      </div>
-      <div class="form-group ">
-         <label class="h4 mb-2 label-holder text-white textCol d-flex justify-content-center text-dark" for="townName">Town</label>
-         <select id="townName"
-                 name="townName"
-                 class="form-control">
-            <option value="">- Select a town -</option>
-            <option th:each="t : ${townList}" th:value="${t.name}" th:text="${t.name}">Town</option>
-         </select>
-         <p th:errors="*{townName}" class="errors alert alert-danger">
-            Town name is required.
-         </p>
-      </div>
-      <div class="button-holder d-flex justify-content-center">
-         <button type="submit" class="btn btn-secondary text-white mb-3" th:value="Register">Register</button>
-      </div>
-   </form>
+         <div class="button__action">
+            <button type="submit" class="btn btn-secondary text-white mb-3" th:value="Register">Register</button>
+         </div>
+      </form>
+   </div>
 </main>
 </body>
 </html>

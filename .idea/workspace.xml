@@ -4,11 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="More tests.">
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Scheduling implementation.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/TownEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserRegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/TownRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserActivationLinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserActivationLinkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/TownService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/schedulers/ActivationLinkCleanupScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/schedulers/ActivationLinkCleanupScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/register-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/shoespng.parspng.com-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/shopping-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/register-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,8 +124,8 @@
       <recent name="bg.softuni.marketplace.service.impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images\error-images" />
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images" />
+      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images\error-images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -286,7 +303,7 @@
       <workItem from="1701166822402" duration="8573000" />
       <workItem from="1701507425630" duration="40107000" />
       <workItem from="1701703581680" duration="1904000" />
-      <workItem from="1701721457540" duration="1235000" />
+      <workItem from="1701721457540" duration="6153000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -400,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701721300646</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Scheduling implementation.">
+      <option name="closed" value="true" />
+      <created>1701722884259</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701722884259</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +456,8 @@
     <MESSAGE value="Some updates." />
     <MESSAGE value="Some testing." />
     <MESSAGE value="More tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="More tests." />
+    <MESSAGE value="Scheduling implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Scheduling implementation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
