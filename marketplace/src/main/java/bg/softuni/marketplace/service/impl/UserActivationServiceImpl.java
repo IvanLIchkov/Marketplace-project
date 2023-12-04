@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.Instant;
+import java.time.Period;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
@@ -55,6 +57,13 @@ public class UserActivationServiceImpl implements UserActivationService {
 
     @Override
     public void cleanUpObsoleteActivationLinks() {
+        List<UserActivationLinkEntity> allByCreatedGreaterThanEqual = userActivationLinkRepository
+                .findAllByCreatedGreaterThanEqual(Instant.now().minus(Period.ofDays(1)));
+        for (UserActivationLinkEntity userActivationLinkEntity : allByCreatedGreaterThanEqual) {
+            UserEntity userForRemove = userActivationLinkEntity.getUser();
+            userRepository.delete(userForRemove);
+            userActivationLinkRepository.delete(userActivationLinkEntity);
+        }
 
     }
 
