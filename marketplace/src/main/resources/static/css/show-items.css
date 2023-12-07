@@ -28,7 +28,8 @@ ol[role="list"] {
 .wrapper ul{
     display: flex;
     gap: 2%;
-    justify-content: center
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .wrapper ul li{
     width: 25%;
@@ -36,6 +37,7 @@ ol[role="list"] {
     text-align: left;
     background-color: #F7F7F7;
     border: 1px solid rgba(0,0,0, 0.4);
+    margin-bottom: 30px;
 }
 .wrapper ul li img{
     width: 100%;

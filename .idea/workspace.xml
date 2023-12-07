@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Scheduling implementation.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" afterDir="false" />
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some last touches.">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/TownEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/UserRegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/TownRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserActivationLinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/UserActivationLinkRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/TownService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/TownServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/schedulers/ActivationLinkCleanupScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/schedulers/ActivationLinkCleanupScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/register-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/shoespng.parspng.com-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/shopping-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/images/register-img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/show-items.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/static/css/show-items.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,41 +68,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/SoftUni Repos/Spring-Fundamentals&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14941406&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;84e8c39452eb127d6df93567d0c7291a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Scopi/Desktop/Marketplace-project/marketplace/src/main/resources/initImages/pod-igoto.jpg",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.14941406",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "spring.configuration.checksum": "84e8c39452eb127d6df93567d0c7291a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;redshift&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redshift",
+      "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="bg.softuni.marketplace.service.impl" />
@@ -303,7 +290,8 @@
       <workItem from="1701166822402" duration="8573000" />
       <workItem from="1701507425630" duration="40107000" />
       <workItem from="1701703581680" duration="1904000" />
-      <workItem from="1701721457540" duration="6153000" />
+      <workItem from="1701721457540" duration="6420000" />
+      <workItem from="1701939002096" duration="4242000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -425,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701722884259</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Some last touches.">
+      <option name="closed" value="true" />
+      <created>1701727870455</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701727870455</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +453,8 @@
     <MESSAGE value="Some testing." />
     <MESSAGE value="More tests." />
     <MESSAGE value="Scheduling implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Scheduling implementation." />
+    <MESSAGE value="Some last touches." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some last touches." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
