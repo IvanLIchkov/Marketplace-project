@@ -1055,8 +1055,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="308" parent="1" name="marketplace_app">
-      <IntrospectionTimestamp>2023-12-10.02:44:25</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-09.22:44:25</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-10.02:44:47</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-09.22:44:47</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="309" parent="1" name="mysql.infoschema">
