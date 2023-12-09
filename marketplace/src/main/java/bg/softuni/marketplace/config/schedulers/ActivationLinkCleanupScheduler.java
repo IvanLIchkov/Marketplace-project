@@ -1,4 +1,4 @@
-package bg.softuni.marketplace.service.schedulers;
+package bg.softuni.marketplace.config.schedulers;
 
 import bg.softuni.marketplace.service.UserActivationService;
 import org.springframework.scheduling.annotation.Scheduled;

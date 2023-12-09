@@ -24,7 +24,6 @@ public class InitDb implements CommandLineRunner {
         categoryService.init();
         roleService.init();
         userService.init();
-
     }
 
 

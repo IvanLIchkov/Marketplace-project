@@ -50,6 +50,34 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    @Transactional
+    public void deleteOffer(Long id) {
+        this.itemRepository.deleteById(id);
+    }
+
+    @Override
+    public void buyItem(Long itemId, String username) {
+        ItemEntity itemToBuy = this.itemRepository.findById(itemId).orElseThrow(()-> new ObjectNotFoundException("Item is not found!"));
+        UserEntity seller = itemToBuy.getSeller();
+        UserEntity buyer = this.userService.findByUsername(username);
+        buyer.buyItem(itemToBuy);
+        seller.sellItem(itemToBuy);
+        this.userRepository.saveAll(List.of(buyer, seller));
+    }
+
+
+
+
+    @Override
+    public List<ShowItemDto> allItems(){
+        return this.itemRepository.findAllByBuyerIsNull()
+                .stream()
+                .map(i -> this.mapper.map(i, ShowItemDto.class).setImgId(i.getImage().getId()))
+                .toList();
+
+    }
+
+    @Override
     public ItemDetailsDto itemDetailsById(Long id, UserDetails viewer){
         ItemDetailsDto itemDetailsDto = this.itemRepository
                 .itemDetails(id)
@@ -58,6 +86,20 @@ public class ItemServiceImpl implements ItemService {
         itemDetailsDto.setOwnerForBuyButton(isOwnerForBuyButton(itemDetailsDto.getId(), viewer));
         return itemDetailsDto;
     }
+
+    @Override
+    public List<ShowItemWithCategoryDto> allItemsByType(Long categoryId) {
+
+        CategoryEntity categoryById = this.categoryService.getCategoryById(categoryId);
+        return this.itemRepository.findAllByCategoryAndBuyerIsNull(categoryById).stream()
+                .map(i->this.mapper.map(i, ShowItemWithCategoryDto.class)
+                        .setImgId(i.getImage().getId())
+                        .setCategoryName(i.getCategory().getType().name()))
+                .toList();
+    }
+
+
+
 
     @Override
     public boolean isOwnerForBuyButton(Long itemId, UserDetails viewer){
@@ -81,46 +123,13 @@ public class ItemServiceImpl implements ItemService {
         return Objects.equals(this.itemRepository.findById(itemId).orElseThrow(() -> new ObjectNotFoundException("Element doesn't contain.")).getSeller().getId(), viewerEntity.getId());
     }
 
+
+
+
     private boolean isAdmin(UserEntity user){
         return user.getRoleEntities().stream()
                 .map(RoleEntity::getName)
                 .anyMatch(r -> RolesEnum.ADMIN == r);
-    }
-    @Override
-    public List<ShowItemDto> allItems(){
-        return this.itemRepository.findAllByBuyerIsNull()
-                .stream()
-                .map(i -> this.mapper.map(i, ShowItemDto.class).setImgId(i.getImage().getId()))
-                .toList();
-
-    }
-
-    @Override
-    public List<ShowItemWithCategoryDto> allItemsByType(Long categoryId) {
-
-        CategoryEntity categoryById = this.categoryService.getCategoryById(categoryId);
-        return this.itemRepository.findAllByCategoryAndBuyerIsNull(categoryById).stream()
-                .map(i->this.mapper.map(i, ShowItemWithCategoryDto.class)
-                        .setImgId(i.getImage().getId())
-                        .setCategoryName(i.getCategory().getType().name()))
-                        .toList();
-    }
-
-    @Override
-    @Transactional
-    public void deleteOffer(Long id) {
-        this.itemRepository.deleteById(id);
-    }
-
-
-    @Override
-    public void buyItem(Long itemId, String username) {
-        ItemEntity itemToBuy = this.itemRepository.findById(itemId).orElseThrow(()-> new ObjectNotFoundException("Item is not found!"));
-        UserEntity seller = itemToBuy.getSeller();
-        UserEntity buyer = this.userService.findByUsername(username);
-        buyer.buyItem(itemToBuy);
-        seller.sellItem(itemToBuy);
-        this.userRepository.saveAll(List.of(buyer, seller));
     }
 
     private ItemEntity itemMap(AddItemDto addItemDto, UserDetails seller, FileEntity upload){
