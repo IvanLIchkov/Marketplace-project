@@ -27,10 +27,10 @@ public class ItemEntity extends BaseEntity{
     @ManyToOne
     private CategoryEntity category;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private UserEntity seller;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private UserEntity buyer;
 
     public String getName() {

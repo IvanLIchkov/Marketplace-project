@@ -21,17 +21,6 @@ public class RoleServiceImpl implements RoleService {
     }
 
 
-    @Override
-    public void init() {
-        if(this.roleRepository.count() ==0){
-            List<RoleEntity> roleInitList = Arrays.stream(RolesEnum.values())
-                    .map(r -> {
-                        return new RoleEntity().setName(r);
-                    }).toList();
-
-            this.roleRepository.saveAll(roleInitList);
-        }
-    }
 
     @Override
     public List<RoleEntity> findAllRoles() {

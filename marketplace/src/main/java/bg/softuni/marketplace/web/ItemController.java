@@ -92,6 +92,16 @@ public class ItemController {
         modelAndView.addObject("itemDetails", itemDetailsDto);
         return modelAndView;
     }
+
+    @GetMapping("/details/bought/{id}")
+    public ModelAndView itemDetailsBoughtItem(@PathVariable Long id, ModelAndView modelAndView,
+                                    @AuthenticationPrincipal UserDetails viewer){
+        ItemDetailsDto itemDetailsDto = this.itemService.itemDetailsByIdBoughtItem(id, viewer);
+        modelAndView.setViewName("item-details");
+        modelAndView.addObject("itemDetails", itemDetailsDto);
+        return modelAndView;
+    }
+
     @GetMapping("/download/{imgId}")
     public HttpEntity<byte[]> downloadImg(@PathVariable Long imgId){
         FileDownloadDto downloadedImg = this.fileService.download(imgId);

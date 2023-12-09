@@ -50,13 +50,13 @@
 <!--                        </div>-->
                         <div class="col-lg-12 mt-3">
                             <div class="row">
-                                <div th:if="${!itemDetails.isOwnerForBuyButton()}" class="col-lg-6">
+                                <div th:if="${!itemDetails.isOwnerForBuyButton()} and ${itemDetails.buyerId == null}" class="col-lg-6">
                                     <form th:method="post"
                                           th:action="@{/items/buy/{itemId}(itemId=*{id})}">
                                         <input type="submit" value="Buy now" class="btn btn-success w-100"/>
                                     </form>
                                 </div>
-                                <div th:if="${itemDetails.isOwner()}" class="col-lg-6">
+                                <div th:if="${itemDetails.isOwner()} and ${itemDetails.buyerId == null}" class="col-lg-6">
                                     <form th:method="delete"
                                           th:action="@{/items/delete/{id}(id=*{id})}">
                                         <input type="submit" value="Delete" class="btn btn-danger w-100"/>

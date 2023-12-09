@@ -1055,8 +1055,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="308" parent="1" name="marketplace_app">
-      <IntrospectionTimestamp>2023-12-05.01:56:17</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-04.21:56:17</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-10.02:44:25</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-09.22:44:25</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="309" parent="1" name="mysql.infoschema">
@@ -1150,7 +1150,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="329" parent="314" name="id">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1296,7 +1296,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_tgr7h4lhr443jwk8e7scaey6j</UnderlyingIndexName>
     </key>
     <column id="360" parent="317" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1354,7 +1354,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="372" parent="319" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

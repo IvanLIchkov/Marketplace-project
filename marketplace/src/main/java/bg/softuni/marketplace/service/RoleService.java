@@ -6,8 +6,6 @@ import bg.softuni.marketplace.model.enums.RolesEnum;
 import java.util.List;
 
 public interface RoleService {
-    void init();
-
     List<RoleEntity> findAllRoles();
 
     List<RoleEntity> findUserRoleEntity();

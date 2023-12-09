@@ -30,39 +30,40 @@ public class ItemServiceImpl implements ItemService {
     private final UserRepository userRepository;
     private CategoryService categoryService;
     private UserService userService;
-    private final FileService fileService;
-    private final ModelMapper mapper;
+        private final FileService fileService;
+        private final ModelMapper mapper;
 
     public ItemServiceImpl(ItemRepository itemRepository, UserRepository userRepository, CategoryService categoryService, UserService userService, FileService fileService, ModelMapper mapper) {
-        this.itemRepository = itemRepository;
-        this.userRepository = userRepository;
-        this.categoryService = categoryService;
-        this.userService = userService;
-        this.fileService = fileService;
-        this.mapper = mapper;
-    }
+            this.itemRepository = itemRepository;
+            this.userRepository = userRepository;
+            this.categoryService = categoryService;
+            this.userService = userService;
+            this.fileService = fileService;
+            this.mapper = mapper;
+        }
 
-    @Override
-    public void addItem(AddItemDto addItemDto, UserDetails seller) throws IOException {
-        FileEntity upload = this.fileService.upload(addItemDto.getImg());
-        this.itemRepository.save(itemMap(addItemDto, seller, upload));
+        @Override
+        public void addItem(AddItemDto addItemDto, UserDetails seller) throws IOException {
+            FileEntity upload = this.fileService.upload(addItemDto.getImg());
+            this.itemRepository.save(itemMap(addItemDto, seller, upload));
 
-    }
+        }
 
-    @Override
-    @Transactional
-    public void deleteOffer(Long id) {
-        this.itemRepository.deleteById(id);
-    }
+        @Override
+        @Transactional
+        public void deleteOffer(Long id) {
+            this.itemRepository.deleteById(id);
+        }
 
-    @Override
-    public void buyItem(Long itemId, String username) {
-        ItemEntity itemToBuy = this.itemRepository.findById(itemId).orElseThrow(()-> new ObjectNotFoundException("Item is not found!"));
-        UserEntity seller = itemToBuy.getSeller();
-        UserEntity buyer = this.userService.findByUsername(username);
-        buyer.buyItem(itemToBuy);
-        seller.sellItem(itemToBuy);
-        this.userRepository.saveAll(List.of(buyer, seller));
+        @Override
+        public void buyItem(Long itemId, String username) {
+            ItemEntity itemToBuy = this.itemRepository.findById(itemId).orElseThrow(()-> new ObjectNotFoundException("Item is not found!"));
+            UserEntity seller = itemToBuy.getSeller();
+            UserEntity buyer = this.userService.findByUsername(username);
+            buyer.buyItem(itemToBuy);
+            seller.sellItem(itemToBuy);
+            itemToBuy.setBuyer(buyer);
+            this.userRepository.saveAll(List.of(buyer, seller));
     }
 
 
@@ -81,6 +82,16 @@ public class ItemServiceImpl implements ItemService {
     public ItemDetailsDto itemDetailsById(Long id, UserDetails viewer){
         ItemDetailsDto itemDetailsDto = this.itemRepository
                 .itemDetails(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Item is not found in database!"));
+        itemDetailsDto.setOwner(isOwner(itemDetailsDto.getId(), viewer));
+        itemDetailsDto.setOwnerForBuyButton(isOwnerForBuyButton(itemDetailsDto.getId(), viewer));
+        return itemDetailsDto;
+    }
+
+    @Override
+    public ItemDetailsDto itemDetailsByIdBoughtItem(Long id, UserDetails viewer){
+        ItemDetailsDto itemDetailsDto = this.itemRepository
+                .itemDetailsBought(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Item is not found in database!"));
         itemDetailsDto.setOwner(isOwner(itemDetailsDto.getId(), viewer));
         itemDetailsDto.setOwnerForBuyButton(isOwnerForBuyButton(itemDetailsDto.getId(), viewer));

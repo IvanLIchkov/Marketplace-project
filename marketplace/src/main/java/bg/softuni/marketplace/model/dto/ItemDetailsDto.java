@@ -27,6 +27,8 @@ public class ItemDetailsDto {
 
     private boolean ownerForBuyButton;
 
+    private Long buyerId;
+
     public ItemDetailsDto(long id,
                           Long imgId,
                           String name,
@@ -34,7 +36,8 @@ public class ItemDetailsDto {
                           String description,
                           CategoriesEnum categoryType,
                           Long sellerId,
-                          String sellerUsername) {
+                          String sellerUsername,
+                          Long buyerId) {
         this.id = id;
         this.imgId = imgId;
         this.name = name;
@@ -43,6 +46,7 @@ public class ItemDetailsDto {
         this.categoryType = categoryType;
         this.sellerId = sellerId;
         this.sellerUsername = sellerUsername;
+        this.buyerId = buyerId;
     }
 
     public long getId() {
@@ -132,6 +136,15 @@ public class ItemDetailsDto {
 
     public ItemDetailsDto setOwnerForBuyButton(boolean ownerForBuyButton) {
         this.ownerForBuyButton = ownerForBuyButton;
+        return this;
+    }
+
+    public Long getBuyerId() {
+        return buyerId;
+    }
+
+    public ItemDetailsDto setBuyerId(Long buyerId) {
+        this.buyerId = buyerId;
         return this;
     }
 }

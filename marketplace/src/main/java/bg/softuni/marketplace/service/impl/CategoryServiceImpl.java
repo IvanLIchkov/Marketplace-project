@@ -21,27 +21,6 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void init() {
-        if (this.categoryRepository.count() ==0) {
-            List<CategoryEntity> categoryInitList = Arrays.stream(CategoriesEnum.values())
-                    .map(c -> {
-                        if (c.equals(CategoriesEnum.HOME)) {
-                            return new CategoryEntity().setType(c).setDescription("Things that every home!");
-                        } else if (c.equals(CategoriesEnum.ELECTRONIC)) {
-                            return new CategoryEntity().setType(c).setDescription("Electronics!");
-                        } else if (c.equals(CategoriesEnum.SPORT)) {
-                            return new CategoryEntity().setType(c).setDescription("Everything you need for sport!");
-                        } else if (c.equals(CategoriesEnum.HOBBY)) {
-                            return new CategoryEntity().setType(c).setDescription("All stuff you need for your hobby!");
-                        } else {
-                            return new CategoryEntity().setType(c).setDescription("Everything that is special item!");
-                        }
-                    }).toList();
-            this.categoryRepository.saveAll(categoryInitList);
-        }
-    }
-
-    @Override
     public List<CategoryEntity> getAllCategories() {
         return this.categoryRepository.findAll();
     }

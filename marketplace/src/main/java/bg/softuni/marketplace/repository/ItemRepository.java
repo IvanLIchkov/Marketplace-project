@@ -19,10 +19,16 @@ public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
 
     List<ItemEntity> findAllByBuyerIsNull();
 
-    @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.image.id, i.name, i.price, i.description, c.type, u.id, u.username) from ItemEntity i " +
+    @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.image.id, i.name, i.price, i.description, c.type, u.id, u.username, i.buyer.id) from ItemEntity i " +
             "join CategoryEntity c on i.category.id = c.id " +
             "join UserEntity u on i.seller.id = u.id " +
             "where i.id = :id and i.buyer.id = null")
     Optional<ItemDetailsDto> itemDetails(@Param("id") Long id);
+
+    @Query("select new bg.softuni.marketplace.model.dto.ItemDetailsDto(i.id, i.image.id, i.name, i.price, i.description, c.type, u.id, u.username, i.buyer.id) from ItemEntity i " +
+            "join CategoryEntity c on i.category.id = c.id " +
+            "join UserEntity u on i.seller.id = u.id " +
+            "where i.id = :id")
+    Optional<ItemDetailsDto> itemDetailsBought(@Param("id") Long id);
 
 }

@@ -8,21 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class InitDb implements CommandLineRunner {
-
-    private CategoryService categoryService;
-    private RoleService roleService;
     private UserService userService;
 
-    private InitDb(CategoryService categoryService, RoleService roleService, UserService userService) {
-        this.categoryService = categoryService;
-        this.roleService = roleService;
+    private InitDb( UserService userService) {
         this.userService = userService;
     }
 
     @Override
     public void run(String... args) throws Exception {
-        categoryService.init();
-        roleService.init();
         userService.init();
     }
 

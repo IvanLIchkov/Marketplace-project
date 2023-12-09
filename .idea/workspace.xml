@@ -4,8 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Some database init sql.">
+    <list default="true" id="476d2cc8-343f-46b6-a7b4-bff5eb8f3695" name="Changes" comment="Last refactors.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ed21af7-c054-4dd8-be19-a8193141dda1/storage_v2/_src_/schema/marketplace_app.LRZoHw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/domain/ItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/ItemDetailsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/dto/ItemDetailsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/init/InitDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/model/init/InitDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/repository/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth/activate-before-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/activate-before-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth/auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/auth/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/errors/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/errors/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/errors/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/item-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/main/resources/templates/user-items.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +133,8 @@
       <recent name="bg.softuni.marketplace.service.impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\templates" />
+      <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\templates\auth" />
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images" />
       <recent name="C:\Users\Scopi\Desktop\Marketplace-project\marketplace\src\main\resources\static\images\error-images" />
     </key>
@@ -289,6 +317,8 @@
       <workItem from="1701721457540" duration="6420000" />
       <workItem from="1701939002096" duration="4286000" />
       <workItem from="1702113325515" duration="598000" />
+      <workItem from="1702125032035" duration="986000" />
+      <workItem from="1702157933855" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="Marketplace project upload in separate repo.">
       <option name="closed" value="true" />
@@ -426,7 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701954687767</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Last refactors.">
+      <option name="closed" value="true" />
+      <created>1702125417323</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702125417323</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +498,8 @@
     <MESSAGE value="Scheduling implementation." />
     <MESSAGE value="Some last touches." />
     <MESSAGE value="Some database init sql." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some database init sql." />
+    <MESSAGE value="Last refactors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Last refactors." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -473,15 +512,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>57</line>
-          <properties class="bg.softuni.marketplace.web.ItemController" method="add">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/AdminController.java</url>
@@ -502,24 +532,6 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>87</line>
-          <properties class="bg.softuni.marketplace.web.ItemController" method="itemDetails">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/web/ItemController.java</url>
-          <line>115</line>
-          <properties class="bg.softuni.marketplace.web.ItemController" method="buyItem">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/marketplace/src/test/java/bg/softuni/marketplace/web/ItemControllerTest.java</url>
           <line>154</line>
           <properties class="bg.softuni.marketplace.web.ItemControllerTest" method="testShowItemsByCategoryId">
@@ -529,13 +541,13 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/UserActivationServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/impl/ItemServiceImpl.java</url>
           <line>58</line>
-          <properties class="bg.softuni.marketplace.service.impl.UserActivationServiceImpl" method="cleanUpObsoleteActivationLinks">
+          <properties class="bg.softuni.marketplace.service.impl.ItemServiceImpl" method="buyItem">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="112" />
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/marketplace/src/main/java/bg/softuni/marketplace/service/ItemService.java</url>

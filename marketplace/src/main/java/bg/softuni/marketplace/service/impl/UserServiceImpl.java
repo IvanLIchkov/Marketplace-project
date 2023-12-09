@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void init() {
-        if(this.userRepository.count() == 0){
+        if(this.userRepository.count() == 10){
             this.userRepository.save(newAdmin());
             this.userRepository.save(newUser());
         }

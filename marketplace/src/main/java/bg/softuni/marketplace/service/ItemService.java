@@ -22,6 +22,8 @@ public interface ItemService {
 
     List<ShowItemDto> allItems();
 
+    ItemDetailsDto itemDetailsByIdBoughtItem(Long id, UserDetails viewer);
+
     List<ShowItemWithCategoryDto> allItemsByType(Long categoryId);
 
     void deleteOffer(Long id);

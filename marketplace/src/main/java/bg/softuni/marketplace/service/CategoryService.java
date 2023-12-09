@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface CategoryService {
 
-    void init();
 
     List<CategoryEntity> getAllCategories();
 

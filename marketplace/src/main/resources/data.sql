@@ -1,3 +1,14 @@
+INSERT INTO categories (type, description) VALUES
+                                               ('HOME', 'Items related to home and domestic activities'),
+                                               ('SPORT', 'Sports-related items and equipment'),
+                                               ('ELECTRONIC', 'Electronic gadgets and devices'),
+                                               ('HOBBY', 'Items related to hobbies and leisure activities'),
+                                               ('OTHERS', 'Miscellaneous items and categories');
+
+INSERT INTO roles (name) VALUES
+                             ('ADMIN'),
+                             ('USER');
+
 INSERT INTO users (confirmed_email, email, first_name, last_name, ip_address, password, username)
 VALUES
     (true, 'user1@example.com', 'John', 'Doe', '192.168.0.1', 'John', 'john_doe'),
@@ -13,7 +24,7 @@ VALUES
 
 INSERT INTO files (content_type, file_data, file_name)
 VALUES
-    ('image/png',LOAD_FILE('initImages/50145-3-dishwasher-png-image-high-quality.png'),'dishwasher.png'),
+    ('image/png',LOAD_FILE('C:/Users/Scopi/Desktop/Marketplace-project/marketplace/src/main/resources/initImages/50145-3-dishwasher-png-image-high-quality.png'),'dishwasher.png'),
     ('image/png',LOAD_FILE('initImages/classic-chair-png-3.png'),'chair.png'),
     ('image/png',LOAD_FILE('initImages/kisspng-the-chow-chow-puppy-keeshond-akita-chow-chow-dog-5b160cb9660cd3.303269271528171705418.jpg'),'chowchow.png'),
     ('image/png',LOAD_FILE('initImages/png-clipart-table-furniture-wood-table-angle-simple.png'),'table.png'),
@@ -26,27 +37,26 @@ VALUES
 
 INSERT INTO items (description, name, price, uploaded_date, category_id, image_id, seller_id)
 VALUES
-    ('High-efficiency dishwasher', 'Dishwasher', 599.99, CURRENT_DATE, 1, 1, 3),
-    ('Comfortable chair for your living room', 'Chair', 149.99, CURRENT_DATE, 1, 2, 4),
-    ('Adorable Chow Chow plush toy', 'Chow Chow Plush Toy', 19.99, CURRENT_DATE, 4, 3, 5),
-    ('Modern and sturdy table for your home', 'Table', 299.99, CURRENT_DATE, 1, 4, 6),
-    ('Classic acoustic guitar for music enthusiasts', 'Acoustic Guitar', 399.99, CURRENT_DATE, 4, 5, 7),
-    ('Microwave oven with advanced features', 'Microwave Oven', 129.99, CURRENT_DATE, 3, 6, 8),
-    ('Nike sports shoes for running', 'Nike Running Shoes', 89.99, CURRENT_DATE, 2, 7, 9),
-    ('Converse casual shoes for everyday wear', 'Converse Casual Shoes', 59.99, CURRENT_DATE, 5, 8, 10),
-    ('High-quality fishing rod for fishing enthusiasts', 'Fishing Rod', 79.99, CURRENT_DATE, 2, 9, 11),
-    ('Podcast microphone for quality recording', 'Podcasting Microphone', 129.99, CURRENT_DATE, 3, 10, 12),
-    ('Unique and stylish item', 'Unique Item', 49.99, CURRENT_DATE, 5, 11, 13);
+    ('High-efficiency dishwasher', 'Dishwasher', 599.99, CURRENT_DATE, 1, 1, 1),
+    ('Comfortable chair for your living room', 'Chair', 149.99, CURRENT_DATE, 1, 2, 2),
+    ('Adorable Chow Chow plush toy', 'Chow Chow Plush Toy', 19.99, CURRENT_DATE, 4, 3, 3),
+    ('Modern and sturdy table for your home', 'Table', 299.99, CURRENT_DATE, 1, 4, 4),
+    ('Classic acoustic guitar for music enthusiasts', 'Acoustic Guitar', 399.99, CURRENT_DATE, 4, 5, 5),
+    ('Microwave oven with advanced features', 'Microwave Oven', 129.99, CURRENT_DATE, 3, 6, 6),
+    ('Nike sports shoes for running', 'Nike Running Shoes', 89.99, CURRENT_DATE, 2, 7, 7),
+    ('Converse casual shoes for everyday wear', 'Converse Casual Shoes', 59.99, CURRENT_DATE, 5, 8, 8),
+    ('High-quality fishing rod for fishing enthusiasts', 'Fishing Rod', 79.99, CURRENT_DATE, 2, 9, 9),
+    ('Под игото', 'Една от най-силните творди на великия вазов', 129.99, CURRENT_DATE, 5, 10, 10);
 
 INSERT INTO users_role_entities (users_id, role_entities_id)
 VALUES
+    (1, 2),
+    (2, 2),
+    (3, 2),
     (4, 2),
     (5, 2),
     (6, 2),
     (7, 2),
     (8, 2),
     (9, 2),
-    (10, 2),
-    (11, 2),
-    (12, 2),
-    (13, 2);
+    (10, 2);
